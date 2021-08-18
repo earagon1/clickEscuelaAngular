@@ -1,0 +1,407 @@
+@import "../../../stylings/color-pallete";
+
+menu {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+//estilos de la barra lateral izquierda
+.menu-nav {
+  background-color: $custom-blue;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 12px 1px 20px 0px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.circle-user {
+  width: 40%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.circle-user:hover {
+  width: 50%;
+  border: 6px solid $custom-blue;
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.253);
+}
+
+.home-button {
+  //background-color: white;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.icon-svg {
+  width: 1.6em;
+  margin: 0.5em;
+  transition: 0.5s ease-in-out;
+}
+
+.button-menu-container:hover .icon-svg {
+  transform: scale(1.2);
+}
+
+.home-button:hover {
+  filter: saturate(2.5);
+}
+.button-notification {
+  margin-left: 90%;
+  margin-top: 1.5em;
+  position: absolute;
+}
+
+.size-display-dinamic {
+  flex: 0 0 89.333333% !important;
+  max-width: 89.333333%;
+}
+
+.menu-hide {
+  display: hide;
+}
+.sidenav-content {
+  display: block;
+  height: 722px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.sidenav {
+  padding: 1px;
+}
+.sidenav-open {
+  padding: 1px;
+}
+
+.button-menu {
+  width: 100%;
+}
+.mat-list {
+  background-color: transparent;
+}
+
+.mat-divider {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  background-color: whi5;
+}
+
+.mat-focus-indicator {
+  font-size: 1.05em;
+  color: white;
+}
+
+.mat-list-item {
+  background-color: none;
+}
+::ng-deep div.mat-list-item-content {
+  padding: 0px !important;
+}
+.container-icon {
+  text-align: center;
+}
+.user {
+  font-size: 2vw;
+}
+
+::ng-deep .mat-list-item {
+  text-align-last: start;
+}
+::ng-deep .mat-drawer-inner-container {
+  overflow: hidden !important;
+  /* background-color: #54c05ac7;*/
+}
+::ng-deep .mat-list-base {
+  background-color: white;
+  text-align-last: center;
+  padding-top: 19px !important;
+}
+::ng-deep .mat-drawer {
+  width: 12%;
+}
+::ng-deep .sidenav-open ~ .mat-drawer-content {
+  margin-left: 5% !important;
+}
+::ng-deep .mat-tab-group {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+}
+.menu-icon {
+  margin-right: 15%;
+}
+
+::ng-deep .mat-drawer-container {
+  background-color: #fff;
+}
+
+.mat-button {
+  outline: none;
+  transition: 0.5s ease-in-out;
+}
+
+.mat-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+//Estilos de las tablas principales
+
+.option-selected {
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.253);
+  background-color: rgba(0, 0, 0, 0.432) !important;
+}
+
+.option-selected svg {
+  transform: scale(1.2);
+  filter: saturate(2);
+}
+.option-selected:hover {
+  background-color: transparent;
+}
+
+.button-menu span {
+  transition: 0.5s ease-in-out;
+}
+
+#responsivehomeButton {
+  display: none;
+  border-right: 2px solid white;
+
+}
+
+#notification-button {
+  position: fixed;
+  margin-top: 0.5em;
+  background-color: $custom-blue;
+}
+.mat-mini-fab {
+  outline: 0;
+}
+
+::ng-deep .mat-drawer-content {
+  margin-left: 0 !important;
+}
+
+.mat-icon {
+  transition: 0.5s ease-in-out;
+  transform-origin: top center;
+}
+
+#notification-button:hover .mat-icon {
+  animation: ring 0.6s ease-in-out 1;
+  animation-delay: 0;
+}
+
+.mat-drawer-content {
+  margin-left: 0 !important;
+}
+
+@media (max-width: 1260px) {
+  ::ng-deep .mat-button-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #user-information {
+    display: none;
+  }
+  #notification-button {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 2em;
+    z-index: 999999999;
+  }
+
+  .menu-nav {
+    width: 100%;
+    height: 100px;
+    display: flexbox;
+  }
+
+  ::ng-deep .sidenav-open ~ .mat-drawer-content {
+    margin-left: -8% !important;
+  }
+
+  .sidenav-content {
+    margin-left: 0;
+  }
+
+  .mat-list-item {
+    display: flex;
+  }
+
+  .mat-focus-indicator {
+    padding: 0.2em;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 0.2em;
+  }
+
+  .mat-list-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+  }
+
+  .mat-list-item span {
+    display: flex;
+    position: absolute;
+    font-size: 0.8rem;
+    bottom: -2.5em;
+  }
+
+  .mat-list-base .mat-list-item,
+  .mat-list-base .mat-list-option {
+    height: 25px;
+  }
+
+  ::ng-deep .mat-list {
+    padding-top: 0;
+    top: 2px;
+    width: 100%;
+  }
+
+  #responsivehomeButton {
+    display: flex;
+    height: 87px;
+    margin: 0;
+    padding: 0;
+    margin-top: -20px;
+  }
+
+  #showButton {
+    display: none;
+  }
+
+
+  
+   .mat-list
+  {
+    transition: width 0.5s ease-in-out;
+    top: 9px;
+    height: 100px;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+  }
+
+  .mat-list.home{
+    grid-template-columns: repeat(6,1fr);
+
+  }
+
+  #responsivehomeButton{
+    transition: 0.5s ease-in-out;
+    width: 0;
+  }
+  
+  .animate-logo
+  {
+    opacity: 1;
+    width: s;
+  }
+
+  .mat-divider{
+    display: none;
+  }
+
+  .sidenav-content {
+    width: 100%;
+    margin-top: 8em;
+  }
+
+  ::ng-deep td {
+    width: 10vw !important;
+    text-align: center !important;
+  }
+
+  ::ng-deep th {
+    width: 10vw !important;
+    text-align: center !important;
+  }
+
+  ::ng-deep .eye {
+    display: inline-block;
+  }
+
+  ::ng-deep .mat-list {
+    overflow-x: auto !important;
+    overflow-y: visible;
+  }
+ 
+}
+
+::ng-deep .mat-list.mat-list-base::-webkit-scrollbar {
+  display: block;
+  height: 10px;
+  cursor: pointer;
+}
+::ng-deep .mat-list.mat-list-base::-webkit-scrollbar-thumb {
+  background-color: $custom-blue-glass;
+  border-radius: 0.5em;
+}
+
+@keyframes ring {
+  0%,
+  20% {
+    transform: rotate(0);
+  }
+  25%,
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  50%,
+  75% {
+    transform: rotate(16deg);
+  }
+  75%,
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.st0 {
+  fill: $green;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  display: flex;
+}
+
+.mat-focus-indicator {
+  width: 300px !important;
+}
+
+@media (max-width: 1260px)
+{
+  .mat-focus-indicator {
+    width: 100% !important;
+  }
+
+ 
+}
+
+.cls-1 {
+  fill: #9acd8d;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content:first-child{
+  height: 100px;
+}
+
+

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mt-2 mb-2 welcome">
+    <img width="150px" src="./assets/images/logo-dark.svg" alt="" />
+    <h4>Bienvenidos</h4>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-12">
+      <mat-tab-group
+        style="position: relative"
+        mat-stretch-tabs
+        class="example-stretched-tabs mat-elevation-z4"
+      >
+        <mat-tab class="mat-tab" label="Curso 3B">
+          <app-students [students]='[]'></app-students>
+        </mat-tab>
+        <mat-tab class="mat-tab" label="Curso 2A">
+          <app-students [students]='[]'></app-students>
+        </mat-tab>
+        <mat-tab class="mat-tab" label="Curso 5C">
+          <app-students [students]='[]'></app-students>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <app-load-dashboard
+    [dashBoardsProperties]="dashBoardsProperties"
+  ></app-load-dashboard>
+</div>

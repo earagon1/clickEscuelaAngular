@@ -1,0 +1,107 @@
+@import "../../../stylings/color-pallete.scss";
+@import "../../../stylings/color-pallete.scss";
+
+.button-menu {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1em;
+}
+
+#search-icon,
+#edit-icon,
+#trash-icon,
+#add-icon {
+  position: relative;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#search-icon img,
+#edit-icon img,
+#trash-icon img,
+#add-icon img {
+  transition: 0.5s ease-in-out;
+}
+
+#search-icon:hover img,
+#edit-icon:hover img,
+#add-icon:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473));
+}
+
+#trash-icon:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(255, 0, 0, 1)) hue-rotate(247 deg);
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473))
+    hue-rotate(247deg) saturate(6);
+}
+
+#trash-icon:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(255, 0, 0, 1)) hue-rotate(247 deg);
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473))
+    hue-rotate(247deg) saturate(6);
+}
+
+//Estilos del button tab
+.svg-content svg {
+  width: 40px;
+  margin-left: 1em;
+}
+
+.svg-content {
+  cursor: pointer;
+}
+
+#toPdf {
+  background-color: blue !important;
+}
+
+.pdf-content {
+  width: 21cm;
+  height: 29.7cm;
+  margin: 1cm auto;
+  background-color: blue;
+}
+
+@media screen and (max-width: 800px) {
+  .pdf-content {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pdf-content {
+    transform: scale(0.6);
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+}
+
+.action-item {
+  width: 50px;
+  height: 50px;
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.action-item:hover {
+  background-color: $custom-blue-glass;
+}

@@ -1,0 +1,21 @@
+<div class="comment-item" #commentItem>
+
+  <div class="col-2 comment-avatar">
+    <div class="user-avatar">N</div>
+  </div>
+
+  <div class="col-10 comment-content">
+    <div class="row" id="comment-body">
+      <span class="comment-head"><b>{{data.sender}}</b> {{data.date | date: 'medium'}}</span>
+      <textarea name="" id="" cols="30" rows="10" [value]='getCommentContent()' #newComment></textarea>
+    </div>
+
+    <div class="row mt-2">
+      <span class="comment-option"  (click)="closeOperation(newComment.value)" style="color: green;" [mat-dialog-close]="true">Aceptar</span>
+      <p style="font-size: 1em;">•</p>
+      <span class="comment-option" style="color: red;" [mat-dialog-close]="false">Cancelar</span>
+    </div>
+
+  </div>
+
+</div>

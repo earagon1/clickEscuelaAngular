@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.17 126.17">
+<defs>
+<style>
+.cls-1{fill:#ef2c06;}
+</style>
+</defs>
+<g class="animate-conectors red-fill">
+<path class="cls-1" d="M87.91,209.55a5.52,5.52,0,0,1,0-7.78L203.09,86.59a5.5,5.5,0,1,1,7.78,7.78L95.69,209.55A5.52,5.52,0,0,1,87.91,209.55Z" transform="translate(-86.3 -84.98)"/><path class="cls-1" d="M90,207.42a2.49,2.49,0,0,1,0-3.53L205.21,88.72a2.5,2.5,0,1,1,3.53,3.53L93.57,207.42A2.49,2.49,0,0,1,90,207.42Z" transform="translate(-86.3 -84.98)"/>
+<path class="cls-1" d="M87.91,94.37a5.5,5.5,0,0,1,7.78-7.78L210.87,201.77a5.5,5.5,0,1,1-7.78,7.78Z" transform="translate(-86.3 -84.98)"/>
+<path class="cls-1" d="M205.21,207.42,90,92.25a2.5,2.5,0,0,1,3.53-3.53L208.74,203.89a2.5,2.5,0,0,1-3.53,3.53Z" transform="translate(-86.3 -84.98)"/>
+</g>
+</svg>

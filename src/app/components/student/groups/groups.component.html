@@ -1,0 +1,6 @@
+<mat-tab-group mat-align-tabs="start">
+
+  <mat-tab *ngFor="let group of workGroupList; let index=index" label="{{group.name}}">
+    <app-groups-list [group]="group" [currentIndex]="index"></app-groups-list>
+  </mat-tab>
+</mat-tab-group>

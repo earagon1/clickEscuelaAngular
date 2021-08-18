@@ -1,0 +1,119 @@
+
+@import "../../../stylings/color-pallete.scss";
+
+.payment-container{
+    background-color: $custom-blue-glass;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+}
+
+.payment-item{
+    padding: 1em;
+
+}
+
+::ng-deep .mat-dialog-container{
+    position:  relative !important;
+}
+
+
+.img-status
+{
+    cursor: pointer;
+    transition: 0.5s ;
+    transform-origin: left left;
+}
+
+.img-status.pay-ok img:hover
+{
+    animation: payOK 1s ease-in-out  1 ;
+}
+
+.img-status.pay-fault img:hover
+{
+    animation: payFAULT 1s ease-in-out  1 ;
+    
+}
+
+
+.account-state{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $custom-blue-glass;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+.action-button{
+    width: 30px;
+    display: inline-block;
+    transition: 0.5s ease-in-out;
+    cursor:pointer;
+    margin-left: 6px;
+}
+
+.action-button:hover{
+    filter: saturate(2);
+    transform: scale(1.2);
+}
+
+
+
+.action-button img{
+    width: 22px;
+
+}
+
+.img-status img{
+    width: 30px;
+}
+
+.light-red{
+    background-color: rgba(255, 0, 0, 0.137);
+    color: red;
+}
+
+
+
+.account-search img{
+    cursor: pointer;
+}
+
+@keyframes payOK {
+    0%,33%{
+        transform: rotate(0);
+    }
+    33%,66%{
+        transform: rotate(-15deg) translateY(-4px);
+        
+    }
+    66%,100%{
+        transform: rotate(0deg);
+    }
+
+
+}
+
+@keyframes payFAULT {
+    0%,33%{
+        transform: scale(1);
+    }
+    20%,40%{
+        transform: scale(1.2);
+        
+    }
+    40%,60%{
+            transform: scale(0.9);
+    }
+    60%,80%{
+        transform: scale(1.2);
+
+    }
+    80%,100%{
+        transform: scale(1);
+    }
+
+
+}

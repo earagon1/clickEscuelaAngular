@@ -1,0 +1,37 @@
+.svg-content svg{
+    width: 40px;
+    margin-left: 1em;
+}
+
+.svg-content{cursor: pointer;}
+
+.upline{
+    stroke-dashoffset:0;
+    stroke-dasharray: 500;
+    transition: 0.5s ease-in;
+    transition-delay: 0s;
+}
+.svg-content:hover .upline
+{
+    animation-name: dash;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dash{
+    from{stroke-dashoffset: 500;}
+    to{stroke-dashoffset: 0;}
+}
+
+polygon
+{
+    transition: 1s ease;
+}
+
+.svg-content:hover polygon
+{
+    animation-iteration-count: infinite;
+    animation-name: appears;
+    animation-delay: 1s;
+}
+

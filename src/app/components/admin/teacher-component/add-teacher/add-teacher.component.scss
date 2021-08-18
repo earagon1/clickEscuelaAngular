@@ -1,0 +1,72 @@
+@import '../../../../stylings/color-pallete';
+
+.container
+{
+    width: 95vw;
+    padding:1em;
+    background-color: whitesmoke;
+    border-radius: 1em;
+    box-shadow: 2px 2px 12px -1px rgba(0, 0, 0, 0.425);
+    margin-bottom: 0.5em;
+}
+
+.action-buttons
+{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+}
+
+.action-item{
+    width: 40px;
+    height: 40px;
+    padding: 0.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.action-item:hover
+{
+    background-color: $custom-blue-glass;
+}
+
+
+
+
+
+::ng-deep .mat-form-field{
+    width: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.svg-content svg{
+    width: 40px;
+    margin-left: 1em;
+}
+
+.cls-1
+{
+    fill: #9acd8d;
+    transition: 0.5s ease-in-out;
+}
+
+.cls-1.less{
+    fill:red
+}
+#vertical.cls-1{
+    transition: 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+#vertical.cls-1.less{
+    transform: rotate(90deg);
+}
+
+#horizontal.cls-1.less{
+    opacity: 0;
+}
+

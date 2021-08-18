@@ -1,0 +1,144 @@
+
+<div class="row">
+  <div class="col-8">
+    <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+
+</mat-form-field>
+</div>
+<div class="col-4" style="display: flex;align-items: center;">
+  <mat-checkbox class="example-margin" [(ngModel)]="checked" (change)="showDebtors()">{{!checked ? 'Filtrar cuentas con deuda' : 'Cancelar Filtro' }}</mat-checkbox>
+
+</div>
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table aria-label="accountList" mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="name">
+      <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let row"> {{row.name | firstLetter: 'normalize'}} </td>
+    </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="surname">
+      <th id="surname" mat-header-cell *matHeaderCellDef mat-sort-header>Apellido </th>
+      <td mat-cell *matCellDef="let row"> {{row.surname | firstLetter: 'normalize'}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="course">
+      <th id="course" mat-header-cell *matHeaderCellDef mat-sort-header>Curso</th>
+      <td mat-cell *matCellDef="let row"> {{row.course}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="titular">
+      <th id="titular" mat-header-cell *matHeaderCellDef mat-sort-header>Titular</th>
+      <td mat-cell *matCellDef="let row"> {{row.titular}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <th id="state" mat-header-cell *matHeaderCellDef mat-sort-header>Estado de la cuenta</th>
+      <td mat-cell *matCellDef="let row">
+
+        <div *ngIf="row.state" matTooltip="Sin deuda">
+          <svg class="icon-svg" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.67 213.4">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #9acd8d;
+                }
+              </style>
+            </defs>
+            <path class="cls-1"
+              d="M134.89,254.78a16.28,16.28,0,0,1-9.35-2.95l-88.87-62A16.37,16.37,0,1,1,55.42,163l75.44,52.64L247.55,48.38A16.37,16.37,0,1,1,274.4,67.12L148.34,247.77a16.45,16.45,0,0,1-13.45,7Z"
+              transform="translate(-29.68 -41.37)" />
+          </svg>
+        </div>
+
+        <div *ngIf="!row.state" matTooltip="Deudor">
+          <svg class="icon-svg" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.17 126.17">
+            <defs>
+              <style>
+                .cancel-control {
+                  fill: #ef2c06;
+                }
+              </style>
+            </defs>
+            <path class="cancel-control"
+              d="M87.91,209.55a5.52,5.52,0,0,1,0-7.78L203.09,86.59a5.5,5.5,0,1,1,7.78,7.78L95.69,209.55A5.52,5.52,0,0,1,87.91,209.55Z"
+              transform="translate(-86.3 -84.98)" />
+            <path class="cancel-control"
+              d="M90,207.42a2.49,2.49,0,0,1,0-3.53L205.21,88.72a2.5,2.5,0,1,1,3.53,3.53L93.57,207.42A2.49,2.49,0,0,1,90,207.42Z"
+              transform="translate(-86.3 -84.98)" />
+            <path class="cancel-control" d="M87.91,94.37a5.5,5.5,0,0,1,7.78-7.78L210.87,201.77a5.5,5.5,0,1,1-7.78,7.78Z"
+              transform="translate(-86.3 -84.98)" />
+            <path class="cancel-control"
+              d="M205.21,207.42,90,92.25a2.5,2.5,0,0,1,3.53-3.53L208.74,203.89a2.5,2.5,0,0,1-3.53,3.53Z"
+              transform="translate(-86.3 -84.98)" />
+          </svg>
+        </div>
+      </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="actions">
+      <th id="actions" mat-header-cell *matHeaderCellDef mat-sort-header>Detalle</th>
+      <td mat-cell *matCellDef="let index=index; let student">
+        <div class="container-fluid" class="eye" (click)="getPaymentDetail(student.titularId,student)">
+
+          <svg id="eye" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428.23 403.41">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #9acd8d;
+                }
+
+                .cls-2 {
+                  fill: none;
+                  stroke: #9acd8d;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 20px;
+                }
+              </style>
+            </defs>
+            <path class="cls-1" d="M242,150" transform="translate(-7.26 -14.23)" />
+            <path class="cls-1 "
+              d="M221.38,327.36c-40.55,0-83.51-11.38-124.23-32.92C62.93,276.33,31,251.16,9.67,225.36a10.53,10.53,0,0,1,0-13.42c40.7-49.13,124.31-102,211.71-102,40.84,0,84.06,11.53,125,33.35,34,18.1,65.56,43.12,86.72,68.65a10.53,10.53,0,0,1,0,13.42c-20.76,25-51.86,49.79-85.32,67.89C306.49,315.57,262.79,327.36,221.38,327.36Zm0-196.24c-48.72,0-88.36,39.27-88.36,87.53s39.64,87.53,88.36,87.53,88.36-39.27,88.36-87.53S270.1,131.12,221.37,131.12ZM308.8,153a108,108,0,0,1,0,131.38l-4.61,6,7-2.94c49.59-20.89,85-54.07,97.9-67.37l1.35-1.39-1.35-1.4c-27.69-28.55-62.46-52.46-97.89-67.34l-7-2.92Zm-177.2-3.08C82,170.78,46.62,204,33.7,217.26l-1.35,1.39,1.35,1.4c27.69,28.55,62.45,52.47,97.89,67.34l7,2.92-4.6-6A108,108,0,0,1,134,153l4.61-6Z"
+              transform="translate(-7.26 -14.23)" />
+            <path class="cls-1 pupila"
+              d="M221.38,258.46a39.81,39.81,0,1,1,0-79.62c22.17,0,40.22,17.86,40.22,39.81S243.55,258.46,221.38,258.46Zm0-60.44a20.63,20.63,0,1,0,20.79,20.63A20.74,20.74,0,0,0,221.38,198Z"
+              transform="translate(-7.26 -14.23)" />
+            <line class="cls-2 line6" x1="108.68" y1="17.78" x2="138.01" y2="64.5" />
+            <line class="cls-2 line5" x1="319.55" y1="17.78" x2="290.22" y2="64.5" />
+            <line class="cls-2 line4" x1="207.7" y1="10" x2="207.7" y2="57.02" />
+            <line class="cls-2 line3" x1="108.68" y1="385.63" x2="138.01" y2="338.9" />
+            <line class="cls-2 line2" x1="319.55" y1="385.63" x2="290.22" y2="338.9" />
+            <line class="cls-2 line1" x1="207.7" y1="393.41" x2="207.7" y2="346.38" />
+          </svg>
+        </div>
+
+
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+
+</div>

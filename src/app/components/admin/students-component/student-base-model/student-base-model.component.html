@@ -1,0 +1,111 @@
+ 
+ 
+ <div class="close-mat-dialog" matTooltip="Cerrar" (click)="onClose()" >
+   <img src="../../../../../assets/images/cancel.svg" alt="">
+ </div>
+
+ <app-load-screen 
+  [loadService]="loadStudentsService" 
+  [loadError]="loadError" 
+  [messageError]="messageError"
+  [messageInfo]="messageInfo"
+  [messageInfoClass]='messageInfoClass'
+  (cancel)="cancelRequest()"></app-load-screen>
+
+ <div class="div-content" *ngIf="loadStudentsService">
+   <div class="row">
+     <div class="col-8">
+      <mat-form-field >
+     <mat-label>Filter</mat-label>
+     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+      </mat-form-field>
+     </div>
+     <div class="col-4 reload-info">
+        <div class="reload-message" *ngIf="reload">
+          <span style="font-size: 0.9em;">Cargando...</span>
+        </div>
+        <button matTooltip="Recargar"  (click)="refreshTable();" class="reload-button" [ngClass]="{'reloading': reload}">
+          <img width="30px" src="../../../../../assets/images/reload.svg" alt="">
+        </button>
+      
+     </div>
+   </div>
+  
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+   
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+      <td mat-cell *matCellDef="let row">{{ row.surname }}</td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="birthday">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nacimiento</th>
+      <td mat-cell *matCellDef="let row">{{ row.birthday | date : "dd/MM/yy" }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="document">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Documento</th>
+      <td mat-cell *matCellDef="let row">{{ row.document }}</td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="absences">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ausencias</th>
+      <td mat-cell *matCellDef="let row">{{ row.absences }}</td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="observations">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+      <td mat-cell *matCellDef="let row; let index = index" class="row-options">
+        <div
+          class="student-action"
+          matTooltip="Ver informacion de contacto"
+          (click)="openContactInfo(row)"
+
+        >
+          <img src="../../../../assets/images/user.svg" alt="" />
+        </div>
+
+        <div class="student-action" (click)="editStudent(row)" 
+        matTooltip="Editar">
+          <img src="../../../../assets/images/edit.svg" alt="" />
+        </div>
+
+        <div
+          class="student-action"
+          style="width: 15px"
+          (click)="deleteStudent(index, row)"
+          matTooltip="Eliminar"
+        >
+          <img src="../../../../assets/images/cancel.svg" alt="" />
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr  class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSize]="1000"></mat-paginator>
+</div>
+
+
+ </div>
+

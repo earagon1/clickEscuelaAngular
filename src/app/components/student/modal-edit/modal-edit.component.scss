@@ -1,0 +1,85 @@
+
+@import '../../../stylings/color-pallete.scss';
+
+.comment-item
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    border-radius: 10px;
+    margin-bottom: 1em;
+  
+}
+
+::ng-deep .mat-dialog-container{
+    padding: 0 !important;
+}
+textarea{
+    height: 41px;
+}
+
+.comment-content{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-avatar
+{
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    margin-top: 1em;
+    justify-content: center;
+    
+}
+
+
+
+.comment-head{
+    margin-bottom: 1em;
+}
+.comment-option{
+ padding: 0.2em;
+ color: $custom-blue;
+ font-size: 0.9em;
+ cursor: pointer;
+ transition: 0.5s ease-in-out;
+}
+
+.comment-option:hover{
+    filter: saturate(3);
+}
+
+
+
+.comment-container
+{
+    height: 200px;
+    width: 100%;
+    overflow: scroll;
+
+}
+
+#comment-body{display: flex; flex-direction: column;}
+#comment-body span{
+    word-break: break-all;
+
+}
+
+.user-avatar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    $random-color: random(5);
+    width: 45px;
+    height: 45px;
+    background-color: nth($list, $random-color);
+    
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.568);
+    overflow: hidden;
+  }

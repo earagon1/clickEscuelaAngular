@@ -1,0 +1,103 @@
+<div class="close-mat-dialog" matTooltip="Cerrar" (click)="onClose()">
+  <img src="../../../../../assets/images/cancel.svg" alt="">
+</div>
+
+<div class="row account-state" >
+  <div  style="width: 90%;">
+    {{ totalDebt>0 ? 'La cuenta presenta saldo a regularizar -- Total Adeudado: '+totalDebt+'$' : 'Cuenta libre de deuda Deuda'}}
+  </div>
+</div>
+<div class="row account-search">
+  <div class="col-12 col-md-6" style="display: flex; justify-content: center;align-items:center;">
+     <mat-form-field appearance="fill">
+    <mat-label>Filtrar por año</mat-label>
+    <mat-select [(ngModel)]="selectedYear">
+      <mat-option *ngFor="let year of years" [value]="year">
+        {{year}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <img matTooltip="Buscar" (click)="filterByYear()" style="width: 25px; margin-bottom: 20px;" src="../../../../assets/images/search.svg" alt="">
+  </div>
+  <div class="col-12 col-md-6" style="display: flex; justify-content: center;align-items:center;">
+<mat-form-field appearance="fill">
+    <mat-label>Filtrar por mes</mat-label>
+    <mat-select [(ngModel)]="selectedMonth">
+      <mat-option *ngFor="let month of months" [value]="month">
+        {{month}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <img  matTooltip="Buscar" (click)="filterByMonth()" style="width: 25px; margin-bottom: 20px;" src="../../../../assets/images/search.svg" alt="">
+  
+
+  </div>
+ 
+
+  
+</div>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort id="my-table"> 
+
+   
+    <ng-container matColumnDef="period">
+      <th id="period" mat-header-cell *matHeaderCellDef mat-sort-header>Periodo</th>
+      <td mat-cell *matCellDef="let row" [ngClass]="{'light-red': !row.status}"> {{row.period | date: 'MM/yy'}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="amount">
+      <th id="amount" mat-header-cell *matHeaderCellDef mat-sort-header>Monto</th>
+      <td mat-cell *matCellDef="let row" [ngClass]="{'light-red': !row.status}"> {{row.amount}}$</td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="status">
+      <th id="st" mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+      <td mat-cell *matCellDef="let row" [ngClass]="{'light-red': !row.status}">
+        <div matTooltip="Pago" class="img-status" *ngIf="row.status" [ngClass]="{'pay-ok': row.status}">
+          <img src="../../../../assets/images/payOK.jpg" alt="">
+        </div>
+
+        <div matTooltip="Impago" class="img-status" *ngIf="!row.status" [ngClass]="{'pay-fault': !row.status}">
+          <img src="../../../../assets/images/payFault.png" alt="">
+        </div>
+        
+       
+        
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+      <td mat-cell *matCellDef="let row" [ngClass]="{'light-red': !row.status}">
+        <div class="action-button" matTooltip="Ver Factura" (click)="downloadPdf(row,1)">
+          <img src="../../../../assets/images/view-pdf.svg" alt="">
+        </div>
+        <div class="action-button" matTooltip="Imprimir" (click)="downloadPdf(row,2)">
+          <img src="../../../../assets/images/printer.svg" alt="">
+
+        </div>
+        <div class="action-button" matTooltip="Reenviar" (click)="downloadPdf(row,3)">
+         <img src="../../../../assets/images/resend.svg" alt="">
+        </div>
+        </td>
+    </ng-container>
+
+
+    
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+   
+  </table>
+
+  
+  <mat-paginator [pageSize]="1000"></mat-paginator>
+  
+</div>

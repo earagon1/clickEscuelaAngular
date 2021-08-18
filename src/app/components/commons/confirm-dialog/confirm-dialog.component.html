@@ -1,0 +1,41 @@
+<div class="row text-center">
+  <div class="col-12">
+    <div class="row no-gutters">
+      <div class="col-12 no-gutters">
+
+        <div *ngIf="typeEntrie==='string'; else showList">
+          <p>{{message}}</p>
+        </div>
+
+        <ng-template #showList>
+          <p>En el resumen de cuenta se encontraron las siguientes boletas impagas</p>
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0pky">Periodo</th>
+                <th class="tg-0lax">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of message">
+                <td class="tg-0lax">{{item.period |date: 'dd/MM/yyyy'}}</td>
+                <td class="tg-0lax">{{item.amount}} $</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </ng-template>
+
+      </div>
+    </div>
+    <div *ngIf="typeEntrie==='string'" class="row text-center no-gutters">
+      <div class="col-12 text-center no-gutters">
+        <button class="cancelButton" mat-button [mat-dialog-close]="false">NO</button>
+        <button class="confirmButton" mat-button [mat-dialog-close]="true" cdkFocusInitial>SI</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row mb-2 mt-2">
+    <div class="col-12">
+      <h5 *ngIf="existData">
+        <img width="20px" src="./assets/images/modify.svg" alt="" />
+
+        {{ "Modificando nota de: " + localData.grade.student }}
+      </h5>
+      <h5 *ngIf="!existData">
+        <img width="20px" src="./assets/images/plus.svg" alt="" />
+
+        {{ data }}
+      </h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div class="row form-group">
+          <div class="col-12 form-group">
+            <mat-form-field class="example-full-width">
+              <mat-label>Descripcion de la nota</mat-label>
+
+              <textarea matInput type="text" name="description" id="description" class="form-control"
+                placeholder="Ingrese Descripcion..." [(ngModel)]="currentGrade.name" #description required
+                [ngModel]="localData.grade.name"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <div class="col-md-6 col-12">
+            <mat-form-field appearance="fill">
+              <mat-label>Curso</mat-label>
+              <mat-select [(value)]="selectedCourse" [ngModelOptions]="{ standalone: true }"
+                (selectionChange)="loadStudents()" #course>
+                <mat-option *ngFor="let course of courses" [value]="course">
+                  {{ course }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6 col-12 form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Materia</mat-label>
+              <mat-select [(ngModel)]="currentGrade.subject" [ngModelOptions]="{ standalone: true }"
+                [ngModel]="localData.grade.subject">
+                <mat-option *ngFor="let matter of matters" [value]="matter">
+                  {{ matter }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <div class="col-md-6 col-12 form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Tipo de actividad</mat-label>
+              <mat-select [(ngModel)]="currentGrade.type" [ngModelOptions]="{ standalone: true }"
+                [ngModel]="localData.grade.type">
+                <mat-option *ngFor="let type of types" [value]="type.code">
+                  {{ type.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6 col-12 form-group">
+            <div class="col-12 form-group">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nota numerica</mat-label>
+
+                <input matInput type="number" max="10" min="0" name="grade" id="grade" class="form-control"
+                  placeholder="Ingrese Nota..." [(ngModel)]="currentGrade.number" #grade required
+                  [ngModel]="localData.grade.number" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <div class="col-12 form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Alumno</mat-label>
+              <mat-select [ngModelOptions]="{ standalone: true }">
+                <mat-option *ngIf="studentsList.length === 0">Seleccione un curso...</mat-option>
+                <mat-option *ngFor="let student of studentsList" [value]="student.name + ' ' + student.surname">
+                  {{ student.name + " " + student.surname }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <button *ngIf="!existData" class="btn btn-primary btn-block" (click)="addGrade()">
+              Añadir Nota
+            </button>
+            <button *ngIf="existData" class="btn btn-primary btn-block" (click)="modifyGrade()">
+              Modificar Nota
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary btn-block" (click)="onClose()"
+              style="width: 95%; background-color: rgb(223, 72, 72)">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

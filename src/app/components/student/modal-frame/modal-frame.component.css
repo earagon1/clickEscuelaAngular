@@ -1,0 +1,20 @@
+.custom-frame{
+    width: 100%;
+    height:90%;
+}
+
+button{
+    text-decoration: none;
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    border: none;
+}
+
+::ng-deep .url-frame  >.mat-dialog-container{
+
+    overflow: hidden !important;
+    border-radius: 15px !important;
+    background-color:  #2d5b84e0 !important;
+  }

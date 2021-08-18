@@ -1,0 +1,1 @@
+db.estudiante.insert({nombre:10,parciales:{}})

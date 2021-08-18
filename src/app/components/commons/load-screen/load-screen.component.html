@@ -1,0 +1,38 @@
+
+ <div *ngIf="!loadService && !loadError" class="load-container">
+  <div class="container">
+    <div class="row justify-content-center" style="margin-bottom:1em;">
+      <div class="col-12" class="svg-loader">
+        <mat-icon class="option-icon" svgIcon="principal-logo" [class]="messageInfoClass"></mat-icon>
+ 
+      </div>
+    </div>
+    <div class="row">
+ 
+      <div class="col-12" [class]="messageInfoClass">
+        {{messageInfo}}
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4" *ngIf="showCancel">
+      <button mat-raised-button (click) ='cancelRequest()'>Cancelar</button>
+    </div>
+  </div>
+  
+</div>
+
+<div class="container" *ngIf="loadError" class="load-container">
+ <div class="row">
+   <div class="col-12">
+     <div class="img-error-container" >
+       
+      <mat-icon class="option-icon" svgIcon="cancel-error" ></mat-icon>
+
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-12">
+     <p style="color: red;margin-top: 1em;">{{messageError}}</p>
+   </div>
+ </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="row" style="margin-left: 2em;">
+  <div class="col-12 col-sm-4">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+
+
+    </mat-form-field>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <mat-form-field appearance="fill">
+      <mat-label style="height: 12px;">Visualizar por fecha</mat-label>
+      <input name="date" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button class="button-menu" (click)="filterByDate()" matTooltip="Buscar por fecha">
+      <img width="17px" src="./assets/images/search.svg" alt="">
+    </button>
+  </div>
+
+  <div class="col-12 col-sm-2 button-action-present">
+
+    <svg class="add-button" [ngClass]="{'cancelAsistance': takeAsistance}"
+      (click)="changeTakeAsistance();takeAsistance ? save.disabled=false : save.disabled=true" [matTooltip]="!takeAsistance ? 'Tomar Lista' : 'Cancelar' " #changeAsistance
+      id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.78 296.15">
+      <defs></defs>
+      <path class="cls-1"
+        d="M222.68,372.07C141,372.07,74.61,305.65,74.61,224S141,75.93,222.68,75.93a148.05,148.05,0,0,1,133.4,83.72l1.31,2.7-9.91,4.79-1.3-2.71a138,138,0,0,0-123.5-77.5C147.1,86.93,85.61,148.42,85.61,224S147.1,361.07,222.68,361.07a136.51,136.51,0,0,0,137-132.26l.1-3,11,.38-.1,3a148.06,148.06,0,0,1-148,142.88Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1"
+        d="M222.68,369.07c-80,0-145.07-65.08-145.07-145.07S142.69,78.93,222.68,78.93a145.09,145.09,0,0,1,130.7,82l-4.5,2.18a141,141,0,0,0-126.2-79.2C145.45,83.93,82.61,146.76,82.61,224s62.84,140.07,140.07,140.07a139.5,139.5,0,0,0,140-135.16l5,.18a145.07,145.07,0,0,1-145,140Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1" d="M364.92,237.52a8.26,8.26,0,0,1,.2-16.52h.21a8.27,8.27,0,0,1-.2,16.53Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1" d="M359.86,229.13a5.27,5.27,0,1,1,5.13,5.39A5.27,5.27,0,0,1,359.86,229.13Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1"
+        d="M350.94,170.11a8.26,8.26,0,0,1-3.61-15.7,8.16,8.16,0,0,1,3.6-.83,8.27,8.27,0,0,1,7.81,11,8.29,8.29,0,0,1-7.8,5.55Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1" d="M346.19,164.14a5.27,5.27,0,1,0,2.45-7A5.27,5.27,0,0,0,346.19,164.14Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1"
+        d="M224,310.94a5.51,5.51,0,0,1-5.5-5.5V142.56a5.5,5.5,0,0,1,11,0V305.44A5.51,5.51,0,0,1,224,310.94Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1"
+        d="M224,307.94a2.5,2.5,0,0,1-2.5-2.5V142.56a2.5,2.5,0,0,1,5,0V305.44A2.5,2.5,0,0,1,224,307.94Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1" d="M142.56,229.5a5.5,5.5,0,0,1,0-11H305.44a5.5,5.5,0,1,1,0,11Z"
+        transform="translate(-74.61 -75.93)" />
+      <path class="cls-1" d="M305.44,226.5H142.56a2.5,2.5,0,0,1,0-5H305.44a2.5,2.5,0,1,1,0,5Z"
+        transform="translate(-74.61 -75.93)" />
+    </svg>
+
+    <button class="save-button" #save [disabled]='takeAsistance==false' matTooltip="Guardar Asistencia" (click)="savePresents();refreshTable()">
+      <img width="18px" src="./assets/images/save.svg" alt="">
+
+    </button>
+  </div>
+</div>
+
+
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="name">
+      <th id="column1" mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="surname">
+      <th id="column2" mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+      <td mat-cell *matCellDef="let row"> {{row.surname}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="date">
+      <th id="column3" mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let row">
+        <p *ngIf="!takeAsistance">{{row.date | date: 'd/M/yyyy'}} </p>
+        <p *ngIf="takeAsistance">Tomando lista: {{currentDate | date: 'd/M/yyyy'}}</p>
+
+      </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="status">
+      <th id="column4" mat-header-cell *matHeaderCellDef mat-sort-header>Presente</th>
+      <td mat-cell *matCellDef="let row; let index=index" class="text-center">
+
+        <div *ngIf="!takeAsistance" class="buttonSelect" [matMenuTriggerFor]="menu">
+
+
+          <p style="width: 85px; font-size: 12px; position: relative;"> {{row.status ? 'Presente' : 'Ausente'}}
+
+            <img width="17px" src="./assets/images/option.svg" alt="">
+
+
+          </p>
+        </div>
+        <input *ngIf="takeAsistance" type="checkbox" (change)="setPresent($event, index)" class="beauty-input">
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="changeStatus(index,true)">Presente</button>
+          <button mat-menu-item (click)="changeStatus(index,false)">Ausente</button>
+        </mat-menu>
+
+
+
+      </td>
+
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="actions">
+      <th id="column6" mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+      <td mat-cell *matCellDef="let index=index; let grade" style="display: inline-flex">
+        <button id="edit-icon" class="button-menu" disabled>
+          
+          <img  width="20px" src="./assets/images/edit.svg" alt="" (click)="openModify(index,grade)">
+        </button>
+              <button id="trash-icon" class="button-menu" (click)="confirmDelete(index)">
+                  
+                <img  width="15px" src="./assets/images/trash.svg" alt="">
+           </button>
+      </td>
+    </ng-container> -->
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

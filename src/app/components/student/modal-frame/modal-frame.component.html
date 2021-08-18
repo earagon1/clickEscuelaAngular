@@ -1,0 +1,15 @@
+
+    <iframe class="custom-frame" [src]="data" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="container-fluid">
+  <div class="button-bar">
+    <button mat-icon-button (click)="onClose()" tabindex="-1">
+    <img width="20px" src="../../../../assets/images/cancel.svg" alt="">
+  </button>
+  <button mat-icon-button (click)="onClose()" tabindex="-1">
+   <a [href]="data" download="documento.pdf"> <img width="20px" src="../../../../assets/images/save.svg" alt=""></a>
+  </button>
+  <button mat-icon-button  tabindex="-1">
+    <img width="20px" src="../../../../assets/images/search.svg" alt="">
+  </button>
+  </div>
+  

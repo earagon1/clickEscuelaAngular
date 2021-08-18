@@ -1,0 +1,31 @@
+@import "../../../../stylings/color-pallete.scss";
+
+.add-row,
+.delete-row {
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+  margin: 3px;
+  background-color: $custom-blue-glass;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.table-controls {
+  position: fixed;
+  width: 100px;
+  right: -1em;
+  bottom: 2em;
+  padding: 0.5em;
+  background-color: rgba(245, 245, 245, 0.801);
+  border-radius: 10px 0 0 10px;
+  box-shadow: 2px 2px 12px 6px rgba(0, 0, 0, 0.267);
+}
+
+::ng-deep .add-massive .mat-dialog-container {
+  position: relative;
+}
+
+::ng-deep .mat-form-field{
+  width: 90%;
+}

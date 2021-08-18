@@ -1,0 +1,22 @@
+.container{
+    max-width: 100%;
+  }
+  .dashboard{
+    height:105px;
+    width: 79%;
+    min-width: 217px;
+  }
+  .mat-table
+{
+  transition: 0.5s ease-in-out;
+  max-height: 360px;
+  overflow: scroll;
+}
+
+
+  ::ng-deep .mat-tab-label{
+    min-width:370px!important;
+}
+
+
+

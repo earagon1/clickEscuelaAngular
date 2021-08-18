@@ -1,0 +1,45 @@
+.svg-content svg{
+    width: 40px;
+    margin-left: 1em;
+}
+
+.svg-content{cursor: pointer;}
+
+
+
+.svg-content:hover .circle1,
+.svg-content:hover .circle2,
+.svg-content:hover .circle3
+
+{
+    animation-duration: 1s;
+    animation-name: bounce;
+    
+    animation-iteration-count: infinite;    
+}
+
+.circle1{animation-delay: 0.3s;}
+.circle2{animation-delay: 0.6s;}
+.circle3{animation-delay: 0.9s;}
+
+
+
+
+@keyframes bounce{
+    0%,20%{transform: translateY(0px);}
+    20%,40%{transform: translateY(-15px);}
+    40%,60%{transform: translateY(0px);}
+    60%,80%{transform: translateY(2px);}
+    80%,100%{transform: translateY(0px);}
+
+}
+
+
+@keyframes latir{
+    0%,20%{transform: scale(1);}
+    20%,40%{transform: scale(0.9);}
+    40%,60%{transform: scale(1);}
+    60%,80%{transform: scale(0.8);}
+    80%,100%{transform: scale(1);}
+
+}

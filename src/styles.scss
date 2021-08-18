@@ -1,0 +1,450 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../src/app/stylings/color-pallete.scss";
+@import "../src/app/stylings/custom-fonts.scss";
+
+html, body { height: 100%; }
+body { margin: 0;
+  
+}
+
+ *{
+    font-family: 'TenorSans', sans-serif;
+    font-size: 0.96rem;
+}
+
+::ng-deep body::-webkit-scrollbar {
+  display: block !important;
+  cursor: pointer !important;
+}
+::ng-deep body::-webkit-scrollbar-thumb {
+  background-color: $custom-blue-glass !important;
+  border-radius: 0.5em !important;
+}
+
+::ng-deep .container{
+  max-width: 100%;
+}
+
+#responsivehomeButton {
+  display: flex;
+  height: 87px;
+  margin: 0;
+  padding: 0;
+  margin-top: -20px;
+}
+
+::ng-deep .mat-simple-snackbar{
+ justify-content: center !important;
+}
+
+::ng-deep .mat-paginator-page-size.ng-star-inserted{
+  display: none !important;
+}
+
+.button-menu{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1em;
+}
+
+.button-menu:disabled{
+  filter: grayscale(3);
+  transition: 0.5s ease-in-out;
+}
+.button-menu:disabled:hover
+{
+  filter: grayscale(3);
+  transform: rotate(45deg);
+}
+
+.form-control{
+  width: 95%;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.61);
+  border:0;
+  border-bottom: 2px solid black;
+  text-decoration: none;
+  outline: none;
+  
+}
+
+h5{
+  font-family: Bebas;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  text-align: center !important;
+}
+h4{
+  font-family: Bebas;
+  font-size: 3em !important;
+  letter-spacing: 0.1em;
+}
+
+
+textarea{
+  outline: 0;
+  box-shadow: none;
+}
+
+#background-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  width: 100%
+}
+.mat-tab-header
+{
+  border-radius: 1em 1em 0 0 ;
+  background-color: $blue-B;
+}
+
+.mat-list-base .mat-subheader{
+  color: white;
+}
+
+
+
+.mat-tab-label{
+  color: white;
+  font-weight: bolder;
+  height: 35px !important;
+}
+
+.mat-tab-label-content{
+
+  font-size: 0.85em !important;
+}
+
+.mat-tab-header{
+  margin-bottom: 1em;
+
+}
+
+table{
+  margin: 0 !important;
+  min-width: 100%
+}
+
+
+
+@media (max-width: 1260px)
+{
+  .container{
+    max-width: 100%;
+  }
+  
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto{
+  padding-right: 0;
+  padding-left: 0;
+
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+    padding-left: 0;
+  }
+  .button-action-present{
+    position: absolute;
+    right: 0;
+  }
+  .chat-container
+{
+  background-color: black;
+  width: 83.5vw;
+}
+
+::ng-deep .libratyText{
+font-size: 9.5vw !important;
+}
+}
+
+::ng-deep .mat-list{
+  overflow: auto !important;
+}
+
+
+
+
+
+}
+
+
+.svg-content svg {
+  width: 40px;
+  margin-left: 1em;
+}
+
+.svg-content {
+  cursor: pointer;
+}
+
+.st0,.cls{
+  fill:#9ACD8D;
+}
+
+.mat-tab-group
+{
+  border-radius: 1.5em;
+  box-shadow: 0px 12px 20px 2px rgba(0, 0, 0, 0.219);
+  background-color: rgba(255, 255, 255, 0.747);
+  
+}
+
+
+
+.mat-card.mat-focus-indicator
+{
+  border-radius: 0.7em;
+  box-shadow: 0px 12px 20px 2px rgba(0, 0, 0, 0.219);
+}
+
+/* Cambia el color de los toogles activos */
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+  background-color:$green;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+  background-color:#9acd8d91;
+}
+
+
+//Estilos de los botones de accion
+
+.button-action{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1em;
+  transition: 0.5s ease-in-out;
+}
+
+.button-action:disabled{
+  filter: grayscale(3);
+  cursor: not-allowed;
+}
+
+.button-action:enabled:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473))
+}
+
+#edit-icon,#trash-icon
+{
+  position: relative;
+  
+
+}
+
+#search-icon:hover img,#edit-icon:hover img,#add-icon:hover img{
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473))
+}
+
+#trash-icon:hover img{
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(255, 0, 0, 1)) hue-rotate(247 deg);
+  -webkit-filter:  drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473) ) hue-rotate(247deg) saturate(6);
+
+  
+}
+
+h5{
+  text-align: start;
+}
+
+#buttonsTab
+{
+   
+    background-color:$custom-blue-glass;
+    padding: 0.4em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    box-shadow: 6px 6px 12px 3px rgba(0, 0, 0, 0.247);
+    color: white;
+    height: 60px;
+   
+}
+
+#buttonsTab h5{
+margin: 0;
+}
+
+//Fin de los estilos de
+
+//Lineas de prueba
+
+  .hola
+  {
+    border: none !important;
+    background: transparent;
+    box-shadow: none;
+    padding: 1em;
+    transition: 0.5s ease;  
+  }
+
+  .hola:disabled
+  {
+   opacity: 1; 
+   color: black;
+   outline: none !important;
+   appearance: none;
+  }
+
+  
+
+  .hola:focus{
+    outline: none;
+  }
+
+  
+
+  
+
+  .welcome{
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    padding: 0.5em;
+    
+  }
+  .welcome::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 4px solid $green;
+    transform: skewX(-15deg);
+    left: -60px;
+    border-radius: 10px;
+    
+  }
+
+ 
+
+  .welcome h4{
+    margin-bottom: 0;
+  }
+  .welcome img{
+    margin-bottom: 0;
+  }
+
+  //Estilos para buttons-tab
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .action-item {
+    width: 50px;
+    height: 50px;
+    padding: 0.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .action-item:hover {
+    background-color: $custom-blue-glass;
+  }
+  
+  ::ng-deep .mat-dialog-container{
+    position: relative !important;
+}
+
+
+  div.close-mat-dialog
+  {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.7em;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+    right: 0.2em;
+    top: 0.2em;
+    z-index: 999;
+  }
+  
+  div.close-mat-dialog:hover{
+    background-color: rgba(255, 0, 0, 0.151);
+  }
+
+  @media (max-width:960px) {
+    .mat-tooltip{
+      font-size: 0.70em !important ;
+    }
+    
+  }
+
+  .mat-snack-bar-container.error{
+    background-color: $error;
+  }
+
+  .mat-snack-bar-container.succes{
+    background-color: $succes;
+    color: black;
+  }
+
+  
+  .mat-snack-bar-container.normal{
+    background-color: $normal;
+  }
+
+  .mat-simple-snackbar-action button 
+  {
+    background-color: rgba(255, 255, 255, 0.74);
+    color: black;
+  }
+
+  .load-message{
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .load-screen-container{
+    background-color: rgba(0, 0, 0, 0.932);
+    border-radius: 15px;
+    padding: 2em;
+ 
+  }
+
+  .load-screen-container .white{
+    color: whitesmoke;
+  }
+
+  .load-screen-container .black{
+    color: black;
+  }
+
+  .white svg path{
+    stroke: $green;
+  }
+  
+  .unset-width{
+    width: unset !important;
+    height: unset !important;
+
+  }
+
+ 

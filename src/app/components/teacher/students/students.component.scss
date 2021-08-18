@@ -1,0 +1,17 @@
+
+  .mat-form-field {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  ::ng-deep .mat-paginator-page-size.ng-star-inserted{
+    display: none !important;
+  }
+
+  .grayish{
+    color: #787878;
+  }

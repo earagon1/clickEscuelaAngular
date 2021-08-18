@@ -1,0 +1,56 @@
+.mat-form-field {
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+#column1,
+#column2,
+#column3,
+#column4,
+#column6 {
+  width: 18%;
+}
+
+@import "../../../../stylings/color-pallete.scss";
+
+.button-menu {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1em;
+}
+
+#column5,
+#column6 {
+  width: 5%;
+}
+
+#edit-icon,
+#trash-icon {
+  position: relative;
+}
+
+#search-icon img,
+#edit-icon img,
+#trash-icon img,
+#add-icon img {
+  transition: 0.5s ease-in-out;
+}
+
+#search-icon:hover img,
+#edit-icon:hover img,
+#add-icon:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473));
+}
+
+#trash-icon:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px rgba(255, 0, 0, 1)) hue-rotate(247 deg);
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473))
+    hue-rotate(247deg) saturate(6);
+}
+
+::ng-deep .mat-paginator-page-size.ng-star-inserted {
+  display: none !important;
+}

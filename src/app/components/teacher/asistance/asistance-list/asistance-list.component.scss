@@ -1,0 +1,142 @@
+@import '../../../../stylings/color-pallete';
+
+
+.buttonSelect img
+{
+    position: absolute; 
+    right: 0; 
+    top: 4px;
+}
+
+.buttonSelect{
+    cursor: pointer;
+}
+
+.buttonSelect:hover img{
+    animation: pointing 1s ease-in-out infinite;
+}
+
+.add-button
+{
+    width: 20px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    right: 4em;
+    top: 1em;
+    position: absolute;
+}
+
+.save-button
+{
+    width: 20px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    right: 2em;
+    top: 0.8em;
+    position: absolute;
+    border: 0;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+}
+
+.save-button:disabled{
+    filter: grayscale(2);
+}
+
+.save-button:enabled{
+animation: pointingRelative 0.8s ease-in-out  2}
+
+.save-button:enabled:hover{
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.336));
+}
+
+
+
+.cls-1{
+    fill:#9acd8d;
+    transition: 0.5s ease-in-out;
+}
+
+@keyframes pointing{
+   0%,33%{
+        top: 4px;
+    }
+    33%,66%{
+        top: 7px;
+        filter: saturate(3);;
+    }
+    66%,100%{
+        top: 4px;
+    }
+}
+
+@keyframes pointingRelative{
+    0%,33%{
+         transform: translateY(0px);;
+     }
+     33%,66%{
+        transform: translateY(3px);;
+        filter: saturate(3);;
+     }
+     66%,100%{
+        transform: translateY(0px);;
+    }
+ }
+
+@keyframes twist{
+   0%,33%{
+        transform: rotate(45deg);
+    }
+    33%,66%{
+        transform: rotate(120deg);
+        
+    }
+    66%,100%
+    {
+        transform: rotate(45deg);
+
+    }
+}
+
+#column1,#column2,#column3,#column4{
+    width: 40%;
+}
+
+.cancelAsistance
+{
+    animation: twist 0.8s ease-in-out;
+    transform: rotate(45deg);
+   
+}
+
+.cancelAsistance .cls-1{
+    fill: red;
+}
+
+::ng-deep .mat-simple-snackbar{
+    justify-content: center !important;
+    text-align: center;
+    align-items: center;
+   }
+
+   input[type='checkbox']
+   {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    appearance: none;
+    background: url(../../../../../assets/images/cancel.svg);
+    background-repeat: no-repeat;
+   }
+
+   input[type='checkbox']:checked
+   {
+    background: url(../../../../../assets/images/accept.svg);
+    background-repeat: no-repeat;
+   }
+  

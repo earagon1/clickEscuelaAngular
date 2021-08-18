@@ -1,0 +1,87 @@
+<div class="container no-gutters" (mousemove)="changeTrimester()">
+
+  <div class="row table-content">
+    <div class="col-12">
+
+
+
+      <table>
+        <tr>
+          <th style="width: 50%;">
+
+
+            <div class="row nameHeader" (click)="changeTrimester()">
+              <p> Calificaciones de: <br> {{currentData.nameStudent+' '+currentData.surnameStudent}}
+              </p>
+
+            </div>
+
+
+            <div class="tabContainer">
+              <button #trimesterTab class="liTab" (click)="changeSelectedTrimester(0)"
+                [ngClass]="{'selectedLi': selectedTrimester==0}" disabled>1ºT</button>
+              <button #trimesterTab class="liTab" (click)="changeSelectedTrimester(1)"
+                [ngClass]="{'selectedLi': selectedTrimester==1}" disabled>2ºT</button>
+              <button #trimesterTab class="liTab" (click)="changeSelectedTrimester(2)"
+                [ngClass]="{'selectedLi': selectedTrimester==2 }" disabled>3ºT</button>
+
+
+            </div>
+
+
+          </th>
+
+          <th style="width: 50%;">
+            <div class="row nameHeader">
+              <p style="margin-left: 1em;"> {{trimesterNumber}}</p>
+
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <p>Materia</p>
+          </th>
+          <th>
+            <p>Nota</p>
+          </th>
+          <th>
+            <p>Observaciones</p>
+          </th>
+        </tr>
+
+
+        <tr *ngFor="let matter of currentData.matters | keyvalue">
+          <td>
+            <p>{{matter.key}}</p>
+          </td>
+          <td><input [disabled]="currentData.load" class="finalGrade" [id]="'grade'+matter.key" #grade type="number"
+              max="10" min="1" [ngModel]="matter.value"></td>
+          <td><input [disabled]="currentData.load" class="observations" type="text" placeholder="Sin observaciones">
+          </td>
+        </tr>
+
+
+
+      </table>
+    </div>
+  </div>
+  <div class="row text-center mt-4">
+    <div class="col-md-6 col-12 mb-2" [ngClass]="{'col-12': !(currentData.load)}">
+      <button class="confirmButton" mat-button [mat-dialog-close]="true" cdkFocusInitial
+        (click)="addReportCard(data.index)">{{!currentData.load ? 'Confirmar' : 'Descargar'}}</button>
+      <!-- <button class="confirmButton" (click)="showValues(data.index)">
+        Confirmar 
+      </button> -->
+    </div>
+
+    <div *ngIf="!currentData.load" class="col-md-6 col-12">
+      <button class="cancelButton" mat-button [mat-dialog-close]="false">Cancelar</button>
+      <!-- <button class="cancelButton" (click)="closeOnClick()">
+        Cancelar
+      </button> -->
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+<div class="overflow">
+  <div autosize class="container-fluid notification-nav h-100">
+    <div class="row">
+      <div class="col-12">
+        <mat-icon mat-list-icon>notifications_active</mat-icon>
+        <h5>Notificaciones</h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <mat-slide-toggle (click)="changeNotification();">Fijo</mat-slide-toggle>
+
+        <mat-list>
+          <div mat-subheader>Notificaciones</div>
+          <mat-list-item *ngFor="let notificationHomework of notificationsHomework; let index=index"
+            (click)="showNotification(notificationHomework)">
+            <mat-icon class="notification-icon" mat-list-icon><img class="image-fluid" width="20px"
+                src="./assets/images/notify.svg" alt=""></mat-icon>
+            <div mat-line>{{notificationHomework.type}}</div>
+            <div mat-line [title]="[notificationHomework.tittle]"> {{notificationHomework.tittle}} </div>
+
+
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+          <div mat-subheader>Notificaciones-chat</div>
+
+          <mat-list-item *ngFor="let notificationChat of notificationsChat"
+            (click)="showNotification(notificationChat)">
+            <mat-icon class="chat-icon" mat-list-icon><img width="20px" class="image-fluid"
+                src="./assets/images/chat.svg" alt=""></mat-icon>
+            <div mat-line>{{notificationChat.type}}</div>
+            <div mat-line [title]="[notificationChat.tittle]"> {{notificationChat.tittle }} </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.teacher-action{
+    width: 20px;
+    cursor: pointer;
+    margin: 0.3em;
+    display: inline-block;
+}
+
+th.mat-cell{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-info-back{
+    background: url(../../../../../assets/images/background.png);
+   }
+
+::ng-deep .mat-dialog-container{
+    position: relative;
+}

@@ -1,0 +1,38 @@
+<div class="row no-gutters">
+  <div class="col-12 no-gutters">
+    <div class="row">
+      <div class="event-color"></div>
+      <strong>{{event.$title}}</strong>
+    </div>
+    <div class="row">
+      <span class="row-info">
+
+        {{dayName}}
+      </span>
+    </div>
+    <div class="row">
+      <span class="row-info">
+        <strong>Descripcion:</strong> <br>
+        {{event.$description}}
+      </span>
+    </div>
+    <div class="row">
+      <span class="row-info guests">
+        <strong>Invitados:</strong>
+        <p *ngFor="let guest of event.$guests" class="guest-item">
+          {{guest}}
+        </p>
+      </span>
+    </div>
+
+    <div class="row">
+      <span class="row-info guests">
+        <strong>Organizador:</strong>
+        <p>
+          {{event.$owner}}
+        </p>
+      </span>
+    </div>
+
+  </div>
+</div>

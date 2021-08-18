@@ -1,0 +1,38 @@
+@import "../../../stylings/color-pallete.scss";
+.svg-content svg {
+  width: 40px;
+  margin-left: 1em;
+}
+
+.svg-content {
+  cursor: pointer;
+}
+
+#toPdf {
+  background-color: blue !important;
+}
+
+.pdf-content {
+  width: 21cm;
+  height: 29.7cm;
+  margin: 1cm auto;
+  background-color: blue;
+}
+
+@media screen and (max-width: 800px) {
+  .pdf-content {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pdf-content {
+    transform: scale(0.6);
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+

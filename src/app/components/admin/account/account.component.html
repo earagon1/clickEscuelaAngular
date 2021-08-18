@@ -1,0 +1,166 @@
+<div class="container-fluid">
+ <div *ngIf="route =='account'" class="row mt-2 mb-2 welcome">
+    
+  <img width="150px" src="./assets/images/logo-dark.svg" alt="">
+  <h4 >Bienvenidos</h4>
+
+</div>
+
+<div id="buttonsTab" class="row mt-4 mb-4">
+  <div class="col-4 svg-content">
+    <svg class="icon-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 469.341 469.341"
+      style="enable-background: new 0 0 469.341 469.341" xml:space="preserve">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #9acd8d;
+          }
+        </style>
+      </defs>
+      <g>
+        <g>
+          <g>
+            <path class="cls-1" d="M448.004,236.639v-65.965c0-22.368-17.35-40.559-39.271-42.323l-61.26-107c-5.677-9.896-14.844-16.969-25.813-19.906
+       c-10.917-2.917-22.333-1.385-32.104,4.302L79.553,128.007H42.67c-23.531,0-42.667,19.135-42.667,42.667v256
+       c0,23.531,19.135,42.667,42.667,42.667h362.667c23.531,0,42.667-19.135,42.667-42.667v-65.965
+       c12.389-4.418,21.333-16.147,21.333-30.035v-64C469.337,252.786,460.393,241.057,448.004,236.639z M383.944,128.007h-92.971
+       l69.729-40.596L383.944,128.007z M350.103,68.898l-101.529,59.109h-42.113l133.112-77.5L350.103,68.898z M300.295,24.184
+       c4.823-2.823,10.458-3.573,15.844-2.135c5.448,1.458,9.99,4.979,12.813,9.906l0.022,0.039l-164.91,96.013h-42.111L300.295,24.184
+       z M426.67,426.674c0,11.76-9.573,21.333-21.333,21.333H42.67c-11.76,0-21.333-9.573-21.333-21.333v-256
+       c0-11.76,9.573-21.333,21.333-21.333h362.667c11.76,0,21.333,9.573,21.333,21.333v64h-64c-35.292,0-64,28.708-64,64
+       c0,35.292,28.708,64,64,64h64V426.674z M448.004,330.674c0,5.885-4.781,10.667-10.667,10.667H362.67
+       c-23.531,0-42.667-19.135-42.667-42.667c0-23.531,19.135-42.667,42.667-42.667h74.667c5.885,0,10.667,4.781,10.667,10.667
+       V330.674z" />
+            <path class="cls-1" d="M362.67,277.341c-11.76,0-21.333,9.573-21.333,21.333c0,11.76,9.573,21.333,21.333,21.333
+       c11.76,0,21.333-9.573,21.333-21.333C384.004,286.914,374.431,277.341,362.67,277.341z" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="col-4 text-center">
+    <h5>Gestión de cuentas</h5>
+  </div>
+
+  <div class="col-4 action-buttons">
+    <div class="action-item" matTooltip="Reportes" [matMenuTriggerFor]="menu">
+      <svg id="_x31_" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            .report-path {
+              fill: #9acd8d;
+            }
+          </style>
+        </defs>
+
+        <path class="report-path"
+          d="m19.5 24h-15c-1.378 0-2.5-1.122-2.5-2.5v-19c0-1.378 1.122-2.5 2.5-2.5h15c1.378 0 2.5 1.122 2.5 2.5v19c0 1.378-1.122 2.5-2.5 2.5zm-15-23c-.827 0-1.5.673-1.5 1.5v19c0 .827.673 1.5 1.5 1.5h15c.827 0 1.5-.673 1.5-1.5v-19c0-.827-.673-1.5-1.5-1.5z" />
+        <path class="report-path"
+          d="m18.5 12h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+        <path class="report-path" d="m18.5 9h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+        <path class="report-path"
+          d="m18.5 15h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+        <path class="report-path"
+          d="m18.5 18h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+        <path class="report-path"
+          d="m18.5 21h-13c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h13c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+        <path class="report-path"
+          d="m10 18c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z" />
+        <path class="report-path"
+          d="m6.818 16.682c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.036-3.036v-4.293c0-.276.224-.5.5-.5s.5.224.5.5v4.5c0 .133-.053.26-.146.354l-3.182 3.182c-.098.097-.226.146-.354.146z" />
+      </svg>
+      <mat-menu #menu>
+        <button class="action-button" mat-menu-item [matMenuTriggerFor]="debtorReport">
+          <mat-icon class="option-icon" svgIcon="debtors"></mat-icon>
+          <span class="report-option">Reporte de deudores</span>
+        </button>
+        <button class="action-button" mat-menu-item [matMenuTriggerFor]="expensesReport">
+          <mat-icon class="option-icon" svgIcon="out-expenses"></mat-icon>
+          <span class="report-option">Reporte de gastos</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #debtorReport>
+        <button class="action-button" mat-menu-item (click)="generateDebtorsReport(1)">
+          <mat-icon class="option-icon" svgIcon="pdf-icon"></mat-icon>
+          <span class="report-option">Exportar PDF</span>
+        </button>
+        <button class="action-button" mat-menu-item (click)="generateDebtorsReport(2)">
+          <mat-icon class="option-icon" svgIcon="csv-icon"></mat-icon>
+          <span class="report-option">Exportar CSV</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #expensesReport>
+        <button class="action-button" mat-menu-item [matMenuTriggerFor]="dailyReport">
+          <mat-icon class="option-icon" svgIcon="daily"></mat-icon>
+          <span class="report-option">Diarios</span>
+        </button>
+        <button class="action-button" mat-menu-item [matMenuTriggerFor]="weeklyReport">
+          <mat-icon class="option-icon" svgIcon="weekly"></mat-icon>
+          <span class="report-option">Semanales</span>
+        </button>
+        <button class="action-button" mat-menu-item [matMenuTriggerFor]="monthlyReport">
+          <mat-icon class="option-icon" svgIcon="monthly"></mat-icon>
+          <span class="report-option">Mensuales</span>
+        </button>
+        <button class="action-button" mat-menu-item (click)="openDateRangeSelector()">
+          <mat-icon class="option-icon" svgIcon="custom-date"></mat-icon>
+          <span class="report-option">Seleccionar Rango</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #monthlyReport>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('MONTH', 1)">
+          <mat-icon class="option-icon" svgIcon="pdf-icon"></mat-icon>
+          <span class="report-option">Exportar PDF</span>
+        </button>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('MONTH', 2)">
+          <mat-icon class="option-icon" svgIcon="csv-icon"></mat-icon>
+          <span class="report-option">Exportar CSV</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #dailyReport>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('DAY', 1)">
+          <mat-icon class="option-icon" svgIcon="pdf-icon"></mat-icon>
+          <span class="report-option">Exportar PDF</span>
+        </button>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('DAY', 2)">
+          <mat-icon class="option-icon" svgIcon="csv-icon"></mat-icon>
+          <span class="report-option">Exportar CSV</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #weeklyReport>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('WEEK', 1)">
+          <mat-icon class="option-icon" svgIcon="pdf-icon"></mat-icon>
+          <span class="report-option">Exportar PDF</span>
+        </button>
+        <button class="action-button" mat-menu-item (click)="getExpensesReport('WEEK', 2)">
+          <mat-icon class="option-icon" svgIcon="csv-icon"></mat-icon>
+          <span class="report-option">Exportar CSV</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>
+
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4" id="toPDF">
+  <mat-tab #listTab>
+    <app-account-list #appList></app-account-list>
+  </mat-tab>
+</mat-tab-group> 
+</div>
+
+
+<!-- <div class="container no-gutters" class="pdf-content"#tabGroup>
+    <div class="row no-gutters"  >
+      <div class="col-12" style="width: 100%;background-color: #9acd8d;border-radius: 15px;">
+        <h1>Hola buenos dias</h1>
+        <img style="width: 80%;" src="../../../../assets/images/libros.jpg" alt="">
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,33 @@
+::ng-deep.advanced-pie-legend .total-value {
+    font-size: 28px!important;
+}
+
+::ng-deep .total-label{
+    font-size: 20px!important;
+
+}
+::ng-deep .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-label {
+    font-size: 10px!important;
+}
+::ng-deep .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-value {
+    font-size: 18px!important;
+}
+::ng-deep .advanced-pie-legend .legend-items-container .legend-items .legend-item .item-percent {
+    font-size: 18px!important;
+}
+.container{
+    margin-left: -32px;
+}
+.icon-card-approved{
+    background-color: #10b810;
+    width: 55px;
+    margin-left: 107%;
+    margin-top: -147px;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    height: 43px;
+  }
+ .icon{
+    color: white;
+    font-size: 1.5vw;  
+  }

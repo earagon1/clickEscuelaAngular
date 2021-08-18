@@ -1,0 +1,30 @@
+<div class="wrapper-calendar">
+	<div class="header-calendar">
+		<div>
+			<button [matTooltip]="getPrevMonth()" class="prev-month" (click)="changeMonth(-1)">
+				<mat-icon class="option-icon" svgIcon="leftSvg"></mat-icon>
+			</button>
+		</div>
+		<span id="monthNumber" #monthNum>{{monthNumber}}</span>
+		<span id="monthLegend">{{monthName}}</span>
+		<span id="yearLegend" #yearNumber>{{yearName}}</span>
+
+		<div>
+			<button [matTooltip]="getNextMonth()" class="next-month" (click)="changeMonth(1)">
+				<mat-icon class="option-icon" svgIcon="rightSvg"></mat-icon>
+			</button>
+
+		</div>
+	</div>
+	<ol>
+		<li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
+
+		<li class="grid-days" #calendarDay [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+			*ngFor="let day of monthSelect;let first = first" (click)="addEvent(calendarDay,day);" >
+			<span [ngClass]="{'thisDay': day.completeDate===currentDay}" >{{day?.value}}</span>
+			<div *ngFor="let event of day.events" class="event-chip" #eventDiv (click)="showEvent(eventDiv,event); $event.stopPropagation()">
+				{{event.title}}
+			</div>
+		</li>
+	</ol>
+</div>

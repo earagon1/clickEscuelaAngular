@@ -1,0 +1,16 @@
+<div class="container">
+    <ngx-charts-advanced-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="dashBoardProperties.getInformation()"
+    [gradient]="gradient"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-advanced-pie-chart>
+  <mat-card [ngClass]="dashBoardProperties.getClassIcon()">
+    <i class="fa fa-calendar-check-o icon" aria-hidden="true"></i>
+</mat-card>  
+</div>
+

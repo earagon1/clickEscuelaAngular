@@ -1,0 +1,79 @@
+<div class="close-mat-dialog" matTooltip="Cerrar" (click)="onClose()">
+  <img src="../../../../../assets/images/cancel.svg" alt="">
+</div>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" id="input" #input>
+</mat-form-field>
+
+<app-load-screen 
+[loadService]="loadTeacherService" 
+[messageInfo]="messageInfo"
+[messageError]='messageError'
+[loadError]='loadError'
+></app-load-screen>
+
+<div class="div-content" *ngIf="loadTeacherService">
+ <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+      <td mat-cell *matCellDef="let row"> {{row.surname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="birthday">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de nacimiento</th>
+      <td mat-cell *matCellDef="let row"> {{row.birthday | date : 'd/MM/yy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo y Nº DNI</th>
+      <td mat-cell *matCellDef="let row"> {{row.document}} </td>
+    </ng-container>
+
+
+    <!-- <ng-container matColumnDef="courses">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cursos</th>
+      <td mat-cell *matCellDef="let row"> {{row.courses }} </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+      <td mat-cell *matCellDef="let row;let index=index" class="row-options">
+
+        <div class="teacher-action" matTooltip="Ver informacion de contacto" (click)="openContactInfo(row)">
+          <img src="../../../../assets/images/user.svg" alt="">
+        </div>
+
+        <div class="teacher-action" matTooltip="Editar" (click)="editTeacher(row)">
+
+          <img src="../../../../assets/images/edit.svg" alt="">
+        </div>
+
+        <div class="teacher-action" matTooltip="Eliminar" style="width: 15px;" (click)="deleteTeacher(index,row)">
+
+          <img src="../../../../assets/images/cancel.svg" alt="">
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSize]="1000"></mat-paginator>
+</div> 
+</div>

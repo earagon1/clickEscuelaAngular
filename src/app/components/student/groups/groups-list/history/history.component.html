@@ -1,0 +1,8 @@
+<div class="row" class="history-content">
+  <span *ngIf="showSpan" class="view-type">Historial</span> 
+  <div class="history-container">
+    <div *ngFor="let history of group.history" class="history-item">
+      <div class="user-avatar" style="margin-right: 1em; width: 30px; height: 30px;">N</div> <span>{{history.sender}} <b>{{history.content}}</b> {{history.date | date : "medium"}}</span>
+    </div>
+  </div>
+</div>

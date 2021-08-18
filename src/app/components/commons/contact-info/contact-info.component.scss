@@ -1,0 +1,50 @@
+@import "../../../stylings/color-pallete.scss";
+
+p{
+    width: 40%;
+    margin: 0;
+}
+
+.card-container{
+    background-color: #cbcbcb80;
+    border-radius: 20px;
+    padding: 0.5em;
+    box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.445);
+   
+}
+
+::ng-deep .contact-info-back >.mat-dialog-container{
+background-color: transparent;
+ background: url(../../../../assets/images/contact-icons/contact-back.jpg) !important;
+ background-position:center !important;
+ background-repeat: no-repeat !important;
+ background-size: cover !important;
+ background-blend-mode: multiply !important;
+ border-radius: 20px !important;
+
+}
+
+.contact-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.img-container{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    padding: 7px;
+    background-color:$custom-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container img
+{
+   width: 20px;
+}
+

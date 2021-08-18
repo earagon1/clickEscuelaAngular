@@ -1,0 +1,355 @@
+@import '../../../../stylings/color-pallete.scss';
+
+.mat-icon{
+    width: 19px;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mat-select{
+    background-color: $custom-blue-glass ;
+    padding: 0.7em;
+    border-radius: 0.6em;
+    color: white;
+
+}
+
+.mat-select-value-text{
+    color: white;
+}
+
+.mat-option{
+    background-color: $custom-blue-glass ;
+    color: white;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background-color: $blue-gray-2;
+}
+
+.mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled) {
+    background-color: $custom-blue;
+
+}
+
+.mat-option:hover:not(.mat-option-disabled){
+    background-color: $blue-gray-2;
+}
+
+.attach-button{
+    display: flex;
+    justify-content: center;
+    background-color: $gray-2;
+
+}
+
+.title-row
+{
+    margin-bottom: 0.8em;
+    display: flex;
+    flex-direction: row;
+}
+
+.title-row .col-8{
+    border-bottom: 2px solid $custom-blue;
+
+}
+.consign-col{
+    display: block;
+    width: 100%;
+}
+.consign-col input{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $custom-blue;
+    transition: 0.5s ease-in-out;
+
+}
+
+.consign-col input:focus{
+    outline: none;
+    border-bottom: 2px solid $custom-blue;
+    box-shadow: 0px 10px 10px -7px rgba(45,91,132,1)
+
+}
+
+.view-type
+{
+    background-color: $blue-gray-3;
+    cursor: pointer;
+    color: whitesmoke;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+transition: 0.5s ease-in-out;
+}
+
+.selected-type
+{
+    transition: 0.5s ease-in-out;
+    filter: saturate(4);
+}
+
+
+.history-container{
+    width: 100%;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.history-content{
+    width: 100%;
+    height: 100%;
+    padding-left: 1em;
+    padding-top: 1em;
+    background: url(../../../../../assets/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.history-item{
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+::ng-deep .mat-select-value-text{
+    color: whitesmoke;
+}
+
+.history-item:first-child{
+    margin-top: 1em;
+}
+
+::ng-deep .comment-container::-webkit-scrollbar
+{
+    display: block;
+    height: 10px;
+    cursor: pointer;
+
+   
+  }
+  ::ng-deep .comment-container::-webkit-scrollbar-thumb{
+    background-color: $custom-blue-glass;
+    border-radius: 0.5em;
+   
+  }
+
+  ::ng-deep .history-container::-webkit-scrollbar
+{
+    display: block;
+    height: 10px;
+    cursor: pointer;
+
+   
+  }
+  ::ng-deep .history-container::-webkit-scrollbar-thumb{
+    background-color: $custom-blue-glass;
+    border-radius: 0.5em;
+   
+  }
+
+
+
+::ng-deep .mat-input-element .mat-form-field-autofill-control {
+    caret-color: #2d5c84 !important;
+}
+
+.user-avatar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    $random-color: random(5);
+    width: 45px;
+    height: 45px;
+    background-color: nth($list, $random-color);
+    
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.568);
+    overflow: hidden;
+  }
+
+@media (max-width: 1980px){
+.container, .container-sm, .container-md, .container-lg {
+    max-width: 100%;
+}
+
+#history-label{
+    display: none;
+}
+
+textarea:disabled{
+    height: 60px;
+    color: black;
+    border: none;
+    text-decoration: none;
+}
+
+*::-webkit-scrollbar{
+    display: block;
+    background-color: $custom-blue-glass;
+    border-radius: 1em;
+ 
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: $blue-A;
+    border-radius: 2em;
+    
+    
+}
+
+*::-webkit-scrollbar-thumb:hover{
+    filter: saturate(3);
+}
+
+@media (max-width: 575px){
+    #history-label
+    {
+       display: initial;
+    }
+    #history-side{
+        display: none;
+        
+    }
+   
+}
+
+}
+
+//Estilos para los attachs
+
+.attach-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.14);
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 0.5s ease-in-out;
+    transform-origin: top top ;
+    padding: 0em;
+    border-radius: 10px;
+    
+
+}
+
+.attach-image
+{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 0 0 ;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+
+.cancel-attach
+{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    padding: 1em;
+    background-color: $custom-blue;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+.attach-item:hover .cancel-attach
+{
+    opacity: 1;
+}
+
+.cancel-attach:hover{
+    background-color: rgb(134, 13, 13);
+}
+
+.cancel-attach img{
+    position: absolute;
+    width: 14px;
+}
+.attach-container{
+    position: relative;
+}
+.accept-attachs
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    padding: 1em;
+    background-color: $custom-blue;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.accept-attachs:hover{
+    transform: scale(1.2);
+    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.349);
+}
+.accept-attachs img{
+    position: absolute;
+    width: 15px;
+}
+.attach-image img{
+    width: auto;
+    height: 130%;
+}
+
+
+.attach-container.expand{
+ height: 140px;
+ padding:1em
+}
+
+.attach-item
+{
+    position: relative;
+    width: 140px;
+    height: 110px;
+    margin-right: 1em;
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.attach-name{
+    height: 30px;
+    width: 100%;
+    background-color: $gray-3;
+    border-radius: 0 0 15px 15px ;
+    overflow: hidden;
+}
+
+.attach-name span{
+    width: 100%;
+    font-size: 0.7em;
+   text-overflow: ellipsis;
+   word-break: break-word;
+   margin-left: 0.7em;
+}

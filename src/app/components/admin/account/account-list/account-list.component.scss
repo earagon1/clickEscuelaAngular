@@ -1,0 +1,75 @@
+@import "../../../../stylings/color-pallete.scss";
+
+
+.icon-svg{
+    width: 20px;
+    cursor: pointer;
+}
+
+
+.eye{
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+    
+}
+
+svg{
+    opacity: 0.8;
+    transition: 0.5s ease-in-out;
+}
+.line1,.line2,.line3,.line4,.line5,.line6
+{
+    stroke-dashoffset:300;
+    stroke-dasharray: 300;
+    transition: 0.5s ease-in;
+    transition-delay: 0s;
+}
+
+.eye:hover  .line1,
+.eye:hover  .line2,
+.eye:hover  .line3,
+.eye:hover  .line4,
+.eye:hover  .line5,
+.eye:hover  .line6
+{
+    stroke-dashoffset:0  ;
+  
+}
+
+.eye:hover svg{
+    opacity: 1;
+    filter: saturate(2);
+}
+
+.pupila
+{
+    opacity: 0;
+}
+
+.eye:hover .pupila{
+    animation-duration: 0.3s;
+    animation-name: titile;
+    animation-iteration-count: 3;
+    opacity: 1;
+}
+
+::ng-deep ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+    background-color: $custom-blue !important;
+}
+
+@keyframes titile{
+    from
+    {
+        opacity: 0;
+        
+    }
+    to
+    { 
+        opacity: 1;
+    }
+}
+
+::ng-deep .mat-paginator-page-size{
+    display: none !important;
+}

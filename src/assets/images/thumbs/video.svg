@@ -1,0 +1,32 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1967 1129">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcd9a7;
+      }
+
+      .cls-2 {
+        fill: #e2e5e7;
+      }
+
+      .cls-3 {
+        fill: #b0b7bd;
+      }
+
+      .cls-4 {
+        fill: #cad1d8;
+      }
+
+      .cls-5 {
+        fill: #f7b84e;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="1967" height="1129"/>
+  <path class="cls-2" d="M832,284a32.09,32.09,0,0,0-32,32V764a32.09,32.09,0,0,0,32,32h320a32.09,32.09,0,0,0,32-32V412L1056,284Z" transform="translate(47 25)"/>
+  <path class="cls-3" d="M1088,412h96L1056,284v96A32.09,32.09,0,0,0,1088,412Z" transform="translate(47 25)"/>
+  <polygon class="cls-4" points="1231 533 1135 437 1231 437 1231 533"/>
+  <path class="cls-5" d="M1120,721c0,12.86-7.2,23.39-16,23.39H752c-8.8,0-16-10.53-16-23.39V487.11c0-12.87,7.2-23.39,16-23.39h352c8.8,0,16,10.52,16,23.39Z" transform="translate(47 25)"/>
+  <path class="cls-4" d="M1104,742.62H800V766h304c8.8,0,16-10.52,16-23.38V719.23C1120,732.09,1112.8,742.62,1104,742.62Z" transform="translate(47 25)"/>
+  <path d="M879,541.92V666.13c0,12.19,10.72,20.29,20.14,15.23l110.79-59.45c10.89-5.85,11.15-23.94.42-30.21L899.57,526.94C890.11,521.41,879,529.5,879,541.92Z" transform="translate(47 25)"/>
+</svg>

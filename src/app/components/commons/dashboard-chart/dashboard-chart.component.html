@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+            <ngx-charts-pie-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dashBoardProperties.getInformation()"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [legendPosition]="legendPosition"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            [legendTitle]="dashBoardProperties.getTitle()"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+            >
+          </ngx-charts-pie-chart>
+            <mat-card [ngClass]="dashBoardProperties.getClassIcon()">
+                <i class="fa fa-calendar-check-o icon" aria-hidden="true"></i>
+            </mat-card>       
+      
+    </div>
+  
+</div>

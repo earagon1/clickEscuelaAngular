@@ -1,0 +1,80 @@
+<div class="container card-container">
+  <div class="row no-gutters">
+    <div class="col-12 no-gutters">
+      
+      <div class="row" class="contact-item" *ngIf="data.adress">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/adress.svg" alt="">
+        </div>
+        <p>Direccion particular:</p>
+        {{data.adress.street+', '+ data.adress.number+', '+data.adress.locality}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.telephone">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/telephone.svg" alt="">
+        </div>
+        <p>Numero de telefono:</p>
+        {{data.telephone}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.email">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/email.svg" alt="">
+        </div>
+        <p>Email:</p>
+        {{data.email}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.web">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/web.svg" alt="">
+        </div>
+        <p>Pagina Web:</p>
+        {{data.web}}
+      </div>
+
+      
+      <div class="row" class="contact-item" *ngIf="data.telegram">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/telegram.svg" alt="">
+        </div>
+        <p>Telegram:</p>
+        {{data.telegram}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.celular">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/celular.svg" alt="">
+        </div>
+        <p>Celular:</p>
+        {{data.celular}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.whatsapp">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/whatsapp.svg" alt="">
+        </div>
+        <p>Whastapp:</p>
+        {{data.whatsapp}}
+      </div>
+
+      <div class="row" class="contact-item" *ngIf="data.linkedin">
+        <div class="img-container">
+
+          <img src="../../../../assets/images/contact-icons/linkedin.svg" alt="">
+        </div>
+        <p>Celular:</p>
+        {{data.linkedin}}
+      </div>
+
+    </div>
+  </div>
+</div>

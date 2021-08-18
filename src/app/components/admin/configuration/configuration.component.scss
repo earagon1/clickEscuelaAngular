@@ -1,0 +1,193 @@
+@import "../../../stylings/color-pallete";
+
+.grid {
+  margin: 0 !important;
+  margin-top: 2em;
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  margin: 40px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+.grid .option {
+  display: grid;
+  color: whitesmoke;
+  background-color: $custom-blue-glass;
+  padding: 20px;
+  font-size: 20px;
+  place-items: center !important;
+  justify-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.grid .option:hover {
+  background-color: $custom-blue;
+}
+
+.content {
+  transition: 0.5s ease-in-out;
+}
+.grid .option:hover .content {
+  transform: scale(1.06);
+}
+
+.grid .option img {
+  position: relative;
+  max-width: 60px;
+  margin-bottom: 10px;
+}
+
+.content {
+  margin: auto;
+}
+
+// .option:nth-child(1)
+// {
+// grid-column: span 2;
+// grid-row: span 1;
+// }
+// .option:nth-child(2)
+// {
+// grid-column: span 1;
+// grid-row: span 2;
+// }
+.option:nth-child(1) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.option:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+// .option:nth-child(5)
+// {
+// grid-column: span 3;
+// grid-row: span 1;
+// }
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-rows: minmax(100px, auto);
+  }
+
+  .grid .option {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+}
+
+//buttontab
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+}
+
+.action-item {
+  width: 40px;
+  height: 40px;
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.action-item:hover {
+  background-color: $custom-blue-glass;
+}
+
+::ng-deep .mat-form-field {
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.svg-content svg {
+  width: 40px;
+  margin-left: 1em;
+}
+
+.cls-1 {
+  fill: #9acd8d;
+  transition: 0.5s ease-in-out;
+}
+
+.cls-1.less {
+  fill: red;
+}
+#vertical.cls-1 {
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+#vertical.cls-1.less {
+  transform: rotate(90deg);
+}
+
+#horizontal.cls-1.less {
+  opacity: 0;
+}
+
+#emailBody {
+  height: 100px;
+  resize: none;
+}
+
+#emailSubject {
+  height: 50px;
+  resize: none;
+}
+
+.show-opacity {
+  opacity: 0;
+  animation: show-opacity 0.6s ease-in-out 0.2s 1 forwards;
+}
+
+.option-menu-title {
+  padding: 1em;
+  padding-left: 40px;
+  background-color: $green;
+  color: $blue-A;
+}
+
+#go-back-button {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#go-back-button.go-back {
+  animation: go-back 0.6s ease-in-out 0.2s 1 forwards;
+}
+
+@keyframes show-opacity {
+  from {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes go-back {
+  from {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+}

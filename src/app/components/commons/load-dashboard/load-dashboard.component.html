@@ -1,0 +1,33 @@
+
+<div class="row">
+  <!-- <div class="row text-center"> -->
+    <!--TODO hacer mas generico esto-->
+    <div [ngClass]="firstDashboard" class="col-lg-5 col-12">
+    <!-- <div class="col-lg-6 col-12 mb-4 no-guttered"> -->
+        <mat-card class="dashboard">
+            <app-dashboard-vertical [dashBoardProperties]="dashBoardsProperties[2]"></app-dashboard-vertical>
+          </mat-card>
+    </div>
+    <div [ngClass]="secondDashboard" class="col-lg-3 col-12">
+    <!-- <div class="col-lg-6 col-12 mb-4 no-guttered"> -->
+        <mat-card class="dashboard">
+            <app-dashboard-chart [dashBoardProperties]="dashBoardsProperties[0]"></app-dashboard-chart>
+          </mat-card>
+    </div>
+    <div [ngClass]="thirdDashboard" class="col-lg-4 col-12">
+      <!-- <div class="row text-center mb-4"> -->
+         <!-- <div class="col-12 no-guttered"> -->
+          <mat-card class="dashboard">
+              <app-dashboard-chart-advance [dashBoardProperties]="dashBoardsProperties[3]"></app-dashboard-chart-advance>
+            </mat-card>    
+         <!-- </div> -->
+      </div>
+<!-- </div>     -->
+  
+  
+    
+  
+</div>
+
+
+

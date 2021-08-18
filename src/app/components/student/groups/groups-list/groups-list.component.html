@@ -1,0 +1,125 @@
+<div class="container no-gutters">
+  <div class="row">
+    
+    <div class="col-12 col-sm-8">
+      <div class="row mb-4" id="group-info">
+        <div class="col-12">
+          <div class="row" class="title-row">
+            <div class="col-8">
+              <h3>{{group.name}}</h3>
+            </div>
+            <div class="col-4">
+              <mat-select [value]="group.state">
+
+                <mat-option value="TO_DO">
+                  <mat-icon svgIcon="to-do"></mat-icon>
+                  Por Hacer
+                </mat-option>
+                <mat-option value="IN_PROGRESS">
+                  <mat-icon svgIcon="in-time"></mat-icon>
+                  En Progreso
+                </mat-option>
+                <mat-option value="DONE">
+                  <mat-icon svgIcon="realized"></mat-icon>
+                  Finalizado
+                </mat-option>
+                <mat-option value="OVERCOME">
+                  <mat-icon svgIcon="over-time"></mat-icon>
+                  Vencido
+                </mat-option>
+
+
+
+              </mat-select>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-6"
+              style="display: flex; justify-content: flex-start; align-items: center; text-align: start;">
+              <button mat-button class="attach-button" (click)="fileLoader.click()">
+                <input style="display: none;" (change)="showThumbs()" class="fileLoader" #fileLoader
+            type="file" multiple>
+                <img width="20px" src="./assets/images/clip.svg" alt=""> Adjuntar
+              </button>
+            </div>
+            <div class="col-6">
+              <span>Fecha de inicio: {{group.startDate | date: 'shortDate'}}</span>
+              <br>
+              <span>Fecha de entrega: {{group.startDate | date: 'shortDate'}}</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="attach-container expand" [ngClass]="{'expand': selectedFiles.length>0}">
+
+              <div class="attach-item">
+                <div class="cancel-attach" (click)="deleteAttach()">
+                  <img src="../../../../../assets/images/trash.svg" alt="">
+                </div>
+                <div class="attach-image">
+                  <img src="../../../../../assets/images/thumbs/pdf.png" width="120px" height="80px" alt="Image preview..." #previewThumb>
+                </div>
+                <div class="div attach-name" [matTooltip]="(selectedFiles.length>0)? getFileName(): unused()">
+                  <span [innerHTML]="(selectedFiles.length>0)? getFileName(): unused()"></span>
+                </div>
+                
+              </div>
+              <div class="attach-item"></div>
+              <div class="attach-item"></div>
+
+              <div class="accept-attachs" (click)="loadAttachs()">
+                <img src="../../../../../assets/images/accept.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4" id="gruop-slogans">
+        <form class="example-form" style="width: 100%;">
+
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <mat-label><b>Consigna</b></mat-label>
+            <textarea style="width: 100%;" matInput placeholder="Ingrese consigna..." [innerHTML]="getConsigns()" disabled></textarea>
+          </mat-form-field>
+        </form>
+
+      </div>
+
+      <div class="row mb-4">
+
+
+        <div class="row mb-2" style="display: flex; flex-direction: column;">
+          <label for="activity"><b>Actividad</b></label>
+          <div name="activity">
+            Viendo: <span (click)="changeSelectedTab(1)" class="view-type" [ngClass]="{'selected-type': selectedTab==1}">Comentarios</span> <span id="history-label" class="view-type" (click)="changeSelectedTab(2)" [ngClass]="{'selected-type': selectedTab==2}">Historial</span>
+          </div>
+        </div>
+
+        <div class="row" style="display: flex; flex-direction: row; width: 100%;">
+
+          <ng-container *ngIf="selectedTab==1">
+            <app-comment [group]="group" [currentIndex]="currentIndex" [currentSender]="currentSender" style="width: 100%;"></app-comment>
+          </ng-container>    
+          <ng-container *ngIf="selectedTab==2">
+            <app-history [group]="group" [currentIndex]="currentIndex" [currentSender]="currentSender" [showSpan]="false" style="width: 100%;"></app-history>
+          </ng-container>       
+
+        </div>
+
+
+
+      </div>
+
+   
+    </div>
+
+    <div id="history-side" class="col-4" >
+
+      <app-history [group]="group" [currentIndex]="currentIndex" [currentSender]="currentSender" [showSpan]="true" style="width: 100%;"></app-history>
+
+     
+
+    </div>
+  </div>

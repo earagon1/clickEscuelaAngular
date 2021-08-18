@@ -1,0 +1,510 @@
+
+
+.float-image{
+    width:80%;
+    right: 15px;
+    margin-top: -20px;
+    z-index: 999;
+}
+
+.animate,.animate2
+{
+    animation-name: appears;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+  
+    
+}
+
+
+
+@keyframes appears{
+   0%,33%{
+      opacity: 0;
+    }
+
+    33%,66%{
+      opacity: 1;
+    }
+    66%,100%{
+        opacity: 0;
+    }
+  }
+
+  
+
+  .pdf-container{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    text-align: end;
+    justify-content: flex-end;
+     border-radius: 1em;
+    border-radius: 1em;
+    overflow: hidden;
+    margin-bottom: 2em;
+
+  }
+
+ .pdf-thumb {
+    width: 80%;
+    height: auto;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.178);
+    transition: 0.5s ease-in;
+    z-index: 90;
+    cursor: pointer;
+    box-shadow: -2.5px 0 0 0 rgba(128, 128, 128, 0.699),
+                -3px 0 0 0 white,
+                -5.5px 0 0 -1px rgba(128, 128, 128, 0.699),
+                -6px 0 0 -1px white,
+                -8.5px 0 0 -2px rgba(128, 128, 128, 0.699),
+                -9px 0 0 -2px white,
+                -11.5px 0 0 -3px rgba(128, 128, 128, 0.699),
+                -15px 0 8px -5px rgba(0, 0, 0, 0.5);
+
+    
+    
+  }
+
+  
+
+
+
+  .pdf-info
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    border-radius: 1em;
+    transition:  0.5s ease-in-out;
+    transform: translate(102%);
+    display: flex;
+    text-align: start;
+    padding: 0.7em;
+    color: white;
+    flex-direction: column;
+  
+    box-shadow: 0px  0px 10px 0px rgba(0, 0, 0, 0.4) ;
+    cursor: pointer;
+    
+
+  }
+
+  .pdf-info p{
+    width: 70%;
+  }
+
+  .pdf-container:hover .pdf-info{
+    transform: translate(30%);
+  }
+
+  .libratyText
+  {
+  background-color: blue;
+  color: transparent;
+  width: 100%;
+  background-size: 100%;
+  -webkit-background-clip: text;
+
+  font-family: 'Arial Black';
+  text-transform: uppercase;
+  font-size: 6vw;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 110px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  @media (max-width: 1260px)
+{
+ 
+::ng-deep .libratyText
+{
+font-size: 9.5vw !important;
+}
+}
+
+.save:hover{
+filter: saturate(2);
+animation-name: expand;
+animation-timing-function: ease-in-out;
+animation-duration: 1s;
+animation: pointingRelative 0.8s ease-in-out  2
+}
+
+@keyframes expand{
+  0%,20%{
+      transform: scale(1);
+  }
+  20%,40%{
+      transform: scale(1.1);
+  }
+  40%,60%{
+      transform: scale(0.9);
+  }
+  60%,80%{
+        transform: scale(1.05);
+  }
+  80%,100%{
+    transform: scale(1);
+
+    
+  }
+}
+
+@keyframes pointingRelative{
+  0%,33%{
+       transform: translateY(0px);;
+   }
+   33%,66%{
+      transform: translateY(3px);;
+      filter: saturate(3);;
+   }
+   66%,100%{
+      transform: translateY(0px);;
+  }
+}
+
+
+  
+.eye{
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
+  
+}
+
+svg{
+  opacity: 0.8;
+  transition: 0.5s ease-in-out;
+}
+.line1,.line2,.line3,.line4,.line5,.line6
+{
+  stroke-dashoffset:300;
+  stroke-dasharray: 300;
+  transition: 0.5s ease-in;
+  transition-delay: 0s;
+}
+
+.eye:hover  .line1,
+.eye:hover  .line2,
+.eye:hover  .line3,
+.eye:hover  .line4,
+.eye:hover  .line5,
+.eye:hover  .line6
+{
+  stroke-dashoffset:0  ;
+
+}
+
+.eye:hover svg{
+  opacity: 1;
+  filter: saturate(2);
+}
+
+.pupila
+{
+  opacity: 0;
+}
+
+.eye:hover .pupila{
+  animation-duration: 0.3s;
+  animation-name: titile;
+  animation-iteration-count: 3;
+  opacity: 1;
+}
+
+@keyframes titile{
+  from
+  {
+      opacity: 0;
+      
+  }
+  to
+  { 
+      opacity: 1;
+  }
+}
+
+.flex-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  }
+
+.flex-item {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  }
+
+
+  /* Animaciones del logo  */
+
+
+svg{
+  width: 100%;
+}
+
+
+
+.animate-conectors path
+{
+  transform-origin: center center;
+  animation: dashOffset 6s ease-in-out 1.5s , showLogo 1.5s ease-in-out 6.5s;
+  animation-fill-mode: forwards;
+  
+  stroke-dasharray: 852;
+  stroke-dashoffset: -592;
+  stroke-width: 1px;
+  stroke: #35bfec;
+  fill-opacity: 0;
+
+}
+
+
+
+.hls-3
+{
+  width: 0;
+  animation: lineWidth 0.5s  ease-in-out 6.5s forwards; }
+
+  
+
+circle, ellipse{
+  fill-opacity: 0;
+  animation: showLogo 1.5s ease-in-out 7.5s forwards;
+}
+
+.click-motion{
+  offset-path: path('M1503,514.1S1415.72,188,1255.53,210.62s-324.17,48.57-417.4-68.23-178.5-217.3-345-253.65') ;
+  offset-rotate: 0deg;
+ 
+  animation: move 6s infinite  ease-in-out 3.5s;
+  
+  width: 25%;
+  height: 25%;
+  background: cyan;
+  transform: translate(-100px,-100px);
+}
+
+
+.text-logo{
+  opacity: 0;
+}
+
+
+.text-logo{
+  animation: showLogo2 4s ease-in-out forwards;
+  animation-delay: 6.5s;
+}
+
+@keyframes blurring {
+  0% {
+   filter: blur(0);
+  }
+  100% {
+   filter: blur(100px);
+  }
+}
+
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes dashOffset
+{
+  from{
+    stroke-dashoffset: -592;
+  }
+
+  to{stroke-dashoffset: 0;}
+}
+
+@keyframes dashOffset2
+{
+  from{
+    stroke-dashoffset: 200;
+  }
+
+  to{stroke-dashoffset: 0;}
+}
+
+@keyframes showLogo{
+ 
+  from{
+    fill-opacity: 0;
+  }
+
+  to{fill-opacity: 1}
+  
+
+}
+
+@keyframes showLogo2{
+ 
+  from{
+    opacity: 0;
+  }
+
+  to{opacity: 1}
+  
+
+}
+
+
+
+
+
+@keyframes clipPath
+{
+  from{
+    clip-path: circle(0%);
+  }
+
+  to{clip-path: circle(100%);}
+}
+
+.button-action:hover{
+  transform: none;
+}
+
+.accept-button,.cancel-button,.reload-button{
+  position: absolute;
+  display: inline-block;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+
+.accept-button
+{
+  transform: translate(0px) scale(0);
+  animation-name: showEntranceleft;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  transform: translate(-50px) scale(1);
+  
+}
+
+.cancel-button{
+  transform: translate(0px) scale(0);
+  animation-name: showEntranceright;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  transform: translate(50px) scale(1);
+  
+}
+
+.option-box{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+
+
+@keyframes showEntranceleft
+{
+  from{
+    transform: translate(0) scale(0); 
+  }
+
+  to{
+    transform: translate(-50px) scale(1);
+  }
+
+}
+
+@keyframes lineWidth
+{
+  from{
+    width: 0; 
+  }
+
+  to{
+    width: 5.1px;
+  }
+
+}
+
+@keyframes showEntranceright
+{
+  from{
+    transform: translate(0) scale(0); 
+  }
+
+  to{
+    transform: translate(50px) scale(1);
+  }
+
+}
+
+@keyframes scaleReload{
+  from{
+    transform: scale(0); 
+  }
+
+  to{
+    transform: scale(1);
+  }
+}
+
+@keyframes pointIt{
+  0%,20%{
+    transform: scale(1)
+  }
+  20%,40%{
+    transform: scale(0.6)
+  }
+  40%,60%{
+    transform: scale(1)
+  }
+  60%,80%{
+    transform: scale(0.9)
+  }
+  80%,100%{
+    transform: scale(1)
+  }
+}

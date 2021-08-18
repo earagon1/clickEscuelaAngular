@@ -1,0 +1,61 @@
+@import '../../../../stylings/color-pallete';
+
+.student-action{
+    width: 20px;
+    cursor: pointer;
+    margin: 0.3em;
+    display: inline-block;
+}
+
+th.mat-cell{
+    display: flex;
+    flex-direction: column;
+
+}
+
+::ng-deep .mat-paginator-page-size{
+    display: none;
+}
+
+::ng-deep .mat-dialog-container{
+    position: relative;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: $custom-blue;
+}
+
+
+.reload-info{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 80px;
+}
+
+.reload-info button{
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    background: none;
+}
+
+.reload-button.reloading{
+    animation: twist 1s ease-in-out infinite forwards;
+    transform-origin: center center;
+}
+
+@keyframes twist{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+  
+
+

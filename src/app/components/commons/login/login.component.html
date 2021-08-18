@@ -1,0 +1,158 @@
+<div class="background"></div>
+<div class="login-container">
+  <div class="click-escuela">
+    <img src="../../../../assets/images/logo-dark.svg" alt="" />
+    <p style="font-size: 1.3em">A un Click de distancia</p>
+  </div>
+  <div class="login-box">
+    <svg
+    (click)="toggleHelp()"
+      [matTooltip]="clickyMessage"
+      #tooltip
+      matTooltipPosition="above"
+      matTooltipClass="welcome-tooltip"
+      id="Capa_1"
+      data-name="Capa 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 350.01 373.7"
+      [matMenuTriggerFor]='belowMenu'
+    >
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #fff;
+          }
+
+          .cls-2 {
+            fill: #2196f3;
+          }
+
+          .cls-3 {
+            fill: #136399;
+            opacity: 0.3;
+            isolation: isolate;
+          }
+        </style>
+      </defs>
+      <g id="hand" [ngClass]="{'animate-clicky': yesAnimate}">
+        <g>
+          <path
+            d="M227.57,103c-.76-.23-.86-.88-1-1.54a1.31,1.31,0,0,1,.37-1.24,1.28,1.28,0,0,1,.59-.33,1.25,1.25,0,0,1,1.53,1c0,.22.1.4.14.56A1.3,1.3,0,0,1,227.57,103Z"
+            transform="translate(0 -0.01)"
+          />
+          <path
+            d="M294.83,99.89l-30.29,17.42A23.89,23.89,0,0,1,246,119.18l-4.33-1.34a22,22,0,0,1-13-10.74,1.32,1.32,0,0,1,.08-1.37,1.31,1.31,0,0,1,.44-.4,1.27,1.27,0,0,1,.87-.13,1.24,1.24,0,0,1,.86.64,19.55,19.55,0,0,0,11.51,9.52l4.33,1.33A21.36,21.36,0,0,0,263.34,115l30.26-17.4a3.31,3.31,0,0,0-.42-6.12,12.32,12.32,0,0,0-9.49.94l-9.05,5.92c-2.7,1.78-6.62-1-5.53-4.51l2-6.61c.08-.25-1.1,1.69,17.5-28.24a4.54,4.54,0,0,0-2.44-6.75,4.48,4.48,0,0,0-5.13,2L263.54,81.4a1.27,1.27,0,0,1-2.28-1.08L271.4,47.38a4.47,4.47,0,0,0-6.35-5.33,4.6,4.6,0,0,0-2.2,2.69l-9.84,32a1.28,1.28,0,0,1-2.5-.41l1.22-29.58A4.46,4.46,0,0,0,243,45.27c-.25.81-.08-1.75-1.46,31.5A1.28,1.28,0,0,1,239,77l-4.46-20.22a3.83,3.83,0,0,0-7.41-.23,4,4,0,0,0-.08,2l3.13,14.19a34.44,34.44,0,0,1-.72,17.48,20.57,20.57,0,0,0-.91,5.7,1.34,1.34,0,0,1-.3.81,1.28,1.28,0,0,1-1,.49,1.49,1.49,0,0,1-.56-.14A1.28,1.28,0,0,1,226,96a22.81,22.81,0,0,1,1-6.44,31.64,31.64,0,0,0,.66-16.13l-3.13-14.2a6.57,6.57,0,0,1,4.86-7.8A6.32,6.32,0,0,1,237,56.22l2.34,10.61.85-20.47a7.17,7.17,0,0,1,7.33-6.91,7,7,0,0,1,6.73,7.36l-.82,19.72L260.41,44a7,7,0,1,1,13.43,4.14l-7.42,24.09,12.51-19.39a7,7,0,1,1,11.88,7.55L273.54,88.17l-2,6.44a1.28,1.28,0,0,0,1.77,1.55c6.3-4.13,9.05-5.94,9.13-6A14.75,14.75,0,0,1,293.94,89,5.91,5.91,0,0,1,294.83,99.89Z"
+            transform="translate(0 -0.01)"
+          />
+          <path
+            d="M265.75,96.67a18.14,18.14,0,0,0-20.12,12.69,1.28,1.28,0,1,1-2.44-.75,20.73,20.73,0,0,1,23-14.5,1.3,1.3,0,0,1-.44,2.56Z"
+            transform="translate(0 -0.01)"
+          />
+        </g>
+        <path
+          class="cls-1"
+          d="M293.18,91.51a12.32,12.32,0,0,0-9.49.94l-9.05,5.92c-2.7,1.78-6.62-1-5.53-4.51l2-6.61c.08-.25-1.1,1.69,17.5-28.24a4.54,4.54,0,0,0-2.44-6.75,4.48,4.48,0,0,0-5.13,2L263.54,81.4a1.27,1.27,0,0,1-2.28-1.08L271.4,47.38a4.47,4.47,0,0,0-6.35-5.33,4.6,4.6,0,0,0-2.2,2.69l-9.84,32a1.28,1.28,0,0,1-2.5-.41l1.22-29.58A4.46,4.46,0,0,0,243,45.27c-.25.81-.08-1.75-1.46,31.5A1.28,1.28,0,0,1,239,77l-4.46-20.22a3.83,3.83,0,0,0-7.41-.23,4,4,0,0,0-.08,2l3.13,14.19a34.44,34.44,0,0,1-.72,17.48,20.57,20.57,0,0,0-.91,5.7,1.34,1.34,0,0,1-.3.81,1.28,1.28,0,0,1-1,.49,1.49,1.49,0,0,1-.56-.14,21,21,0,0,0,.25,3.06,1.28,1.28,0,0,1,.59-.33,1.25,1.25,0,0,1,1.53,1c0,.22.1.4.14.56a1.3,1.3,0,0,1-1.62,1.59,15.22,15.22,0,0,0,1.19,2.77,1.31,1.31,0,0,1,.44-.4,1.27,1.27,0,0,1,.87-.13,1.24,1.24,0,0,1,.86.64,19.55,19.55,0,0,0,11.51,9.52l4.33,1.33A21.36,21.36,0,0,0,263.34,115l30.26-17.4A3.31,3.31,0,0,0,293.18,91.51Zm-27.43,5.16a18.14,18.14,0,0,0-20.12,12.69,1.28,1.28,0,1,1-2.44-.75,20.73,20.73,0,0,1,23-14.5,1.3,1.3,0,0,1-.44,2.56Z"
+          transform="translate(0 -0.01)"
+        />
+      </g>
+      <g id="Capa_1-2" data-name="Capa 1">
+        <g id="legs">
+          <path
+            d="M117.63,190a4.61,4.61,0,0,0-3.61-1.31h-.3a5.78,5.78,0,0,0-5.37,5.24q-.84,14.88-1.58,29.79l-.12.93c-2,16.57-1.31,33.25-2.09,49.9-.25,5.24-.37,10.42-.39,15.57-.13,4.78-.29,9.56-.4,14.33-.08,3.53-.92,33.13.75,51.13,0,1-.07,2-.13,3a22.59,22.59,0,0,1-.32,2.73,2.35,2.35,0,0,1-.12.6c-2.8.9-9,.59-12,1.11s-9,.4-11.33,3a2.19,2.19,0,0,0,0,3c2.66,3.15,10,3.46,13.75,4.11,5,.88,12.31,1,16.93-1.48,5.08-2.72,5.06-10.77,5.22-15.64V356c.29-3.15.26-6.2.26-8.33,0-16.12-.66-32.18-.31-48.33Q117,273,117.6,246.6c.86-8.12,1.84-16.23,3-24.29C122,213.24,126.39,196.33,117.63,190Z"
+            transform="translate(0 -0.01)"
+          />
+          <path
+            d="M194.69,364.51c-3.39-7-16.55-6.48-23.16-6.77a56.4,56.4,0,0,1-.9-6.59c-.26-2.39-.69-4.77-1.19-7.14-.1-8.41-.65-16.89-.31-25,.44-10.62,1-21.24,1.54-31.86.65-4.8,1.22-9.62,1.55-14.48,1-15.54-1.65-31.5-2.54-47-.31-5.46-1.4-11.19-1.92-16.89A68.32,68.32,0,0,1,170,192.94c1.82-6.58-7.55-10.55-11-4.63-4.94,8.55-3.44,20.54-2.86,29.94.78,12.54,2.61,24.86,2.7,37.45.14,19.48-1.29,39-1.85,58.44-.33,11.6-1.13,25.39,1.34,37.76,0,1.27.06,2.55.17,3.82.43,4.88.82,9.77,5,12.91,3.36,2.51,8.4,1.88,12.33,2.06,5.88.26,13.25-.15,18.18-3.7A1.86,1.86,0,0,0,194.69,364.51Z"
+            transform="translate(0 -0.01)"
+          />
+        </g>
+        <path
+          class="cls-2" id='body'
+          d="M277.7,271,149.76,6.62a10.29,10.29,0,0,0-18.52-1.47L1.37,272.76A10.29,10.29,0,0,0,2.8,284.94a9.64,9.64,0,0,0,2.38,1.88,10.33,10.33,0,0,0,9.72.29l124.28-47.8L263,283.56A10.29,10.29,0,0,0,277.7,271Z"
+          transform="translate(0 -0.01)"
+        />
+        <g id='clicky-eyes' [ngClass]="{'view-login': checkLogin, 'move-eyes': !yesAnimate}">
+          <path
+            d="M112.35,136.26S111.84,122,119,120.43s12.77,7.15,11.75,15.83-2,25-2,25-4.6,5.61-9.19,4.59-7.17-12.25-7.16-20.94Z"
+            transform="translate(0 -0.01)"
+          />
+          <path
+            d="M148.24,136.26s-.51-14.29,6.64-15.83,12.76,7.15,11.74,15.83-2,25-2,25-4.6,5.61-9.19,4.59-7.17-12.25-7.16-20.94Z"
+            transform="translate(0 -0.01)"
+          />
+        </g>
+        <path
+          class="cls-3"
+          d="M277,279.74a10.25,10.25,0,0,1-7.15,5,10.3,10.3,0,0,0-.49-5.55L141.43,14.86a10.31,10.31,0,0,0-11.81-6.39l1.61-3.32a10.3,10.3,0,0,1,18.53,1.47L277.69,271A10.28,10.28,0,0,1,277,279.74Z"
+          transform="translate(0 -0.01)"
+        />
+      </g>
+    </svg>
+
+    
+<mat-menu #belowMenu yPosition="below">
+  <button mat-menu-item style="background-color: #136399; color: whitesmoke;">¿Has olvidado la contraseña?</button>
+  <button mat-menu-item>¿Como obtener un usuario?</button>
+</mat-menu>
+
+    <div class="container" *ngIf="!validCredentials">
+      <div class="row">
+        <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre de usuario</mat-label>
+        <input type="email" [(ngModel)]="login.user"  [ngModelOptions]="{standalone: true}" matInput placeholder="Ex. pat@example.com" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input type="password" [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}" matInput placeholder="Ex. pat@example.com" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Perfil</mat-label>
+        <mat-select [(ngModel)]="login.profile" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let profile of profiles" [value]="profile.value">
+            {{profile.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+    </form>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <button (click)="setSession()" mat-raised-button color="primary">Ingresar</button>
+
+    </div>  
+
+    <div class="row justify-content-center mt-4">
+      <app-load-screen *ngIf="load" style="width: 18%" [showCancel]='false' ></app-load-screen>
+    </div>
+    </div>
+
+    <div class="container" style="margin-top: 3em;" *ngIf="validCredentials">
+
+      <div class="row justify-content-center mt-4">
+        <div class="avatar">
+          <img [src]='currentSession.avatarImage' alt="">
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+       {{ 'Bienvenido/a de nuevo '+ currentSession.user}}
+      </div>
+
+      <a (click)="closeSession()">¿No eres tu? Ingresa con otra cuenta</a>
+
+      <div class="row justify-content-center mt-4">
+        <button (click)="setSessionToken()" mat-raised-button color="primary">Ingresar</button>
+
+    </div> 
+
+    <div class="row justify-content-center mt-4">
+      <app-load-screen *ngIf="load" style="width: 18%" [showCancel]='false' ></app-load-screen>
+    </div>
+    </div>
+    
+    
+  </div>
+</div>

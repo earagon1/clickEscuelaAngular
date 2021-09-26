@@ -1,28 +1,9 @@
-
-language: node_js
-
-node_js:
-  - "10"
-
 addons:
   sonarcloud:
     organization: "earagon1"
     token:
-      secure: "764df701b534816db2f3f1a927de37b1a9e8ca7d"
-      
-install:
-  - npm install
+      secure: "**************************" # encrypted value of your token
 
 script:
-  - npm run test && npm run tslint && sonar-scanner
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
-
-# Don't copy the following part if you're using this project as a starting point of yours
-notifications:
-  email: false
-  webhooks:
-    - secure: "TKXfqeqyiNrX5Hx"
-  on_start: always
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner

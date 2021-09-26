@@ -10,7 +10,6 @@ addons:
 branches:
   only:
     - master
-before_script:
-  - npm install -g --silent @angular/cli@7.3.5
 script:
-  - npm run test && npm run tslint && sonar-scanner
+  - npm install
+  - npm run test && npm run tslint && npm test --coverage && sonar-scanner

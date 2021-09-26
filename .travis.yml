@@ -6,7 +6,7 @@ node_js:
 
 addons:
   sonarcloud:
-    organization: "sonarcloud"
+    organization: "earagon1"
     token:
       secure: "764df701b534816db2f3f1a927de37b1a9e8ca7d"
       

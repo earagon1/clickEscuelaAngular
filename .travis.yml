@@ -1,8 +1,8 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
- 
+language: node_js
+
+node_js:
+  - "10"
+
 addons:
   sonarcloud:
     organization: "earagon1"

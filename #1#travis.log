@@ -1,5 +1,5 @@
 Command line:
-"travis encrypt eebfaa50ca4033ece9212a6118216a887230dd7a"
+"travis encrypt 0f2d607f818817f963e7316283adf478e96743d2"
 
 
    ________                                 __
@@ -25,20 +25,19 @@ Command line:
 
      There is absolutely no warranty on any results obtained from TRAVIS.
 
-  #  Running on pc-2050002009 at Mon Sep 27 11:21:17 2021 (PID 162647)
-  #  Running in /home/earagon/clickescuela/clickEscuelaAngular
+  #  Running on nana at Sat Sep 25 22:50:03 2021 (PID 35805)
+  #  Running in /home/evelin/pruebas/clickEscuelaAngular
   #  Code version: Jan 01 2019,  Compiled at Mar 22 2020, 16:01:08,  Compiler "9.3.0", GCC 9.3.0
   #  Target platform: Linux,  Compile flags: DEBUG_ARRAYS 
   #  Machine: int=4b, long=8b, addr=8b, 0xA0B0C0D0=D0,C0,B0,A0.
-  #  Home: /home/earagon,  Executable: /usr/bin/travis
+  #  Home: /home/evelin,  Executable: /usr/bin/travis
   #  Input from terminal,  Output to terminal
 
  >>> Please use a color scheme with dark background or specify "-nocolor"! <<<
 
-    No configuration file found.
-    Writing default configuration to /home/earagon/.travis.conf ...
+    Loading configuration from /home/evelin/.travis.conf ...
 
-[Renaming existing File input.txt to #1#input.txt ...OK.]
+[Renaming existing File input.txt to #4#input.txt ...OK.]
 Unknown parameter: "encrypt".
 
     List of supported command line options:

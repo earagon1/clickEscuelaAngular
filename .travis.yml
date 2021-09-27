@@ -9,7 +9,6 @@ addons:
     organization: "earagon1"
      token:
        secure: "4166bbd1e86538d4a7d462b95e43fddc1d3c9aa3"
-
 branches:
   only:
     - master

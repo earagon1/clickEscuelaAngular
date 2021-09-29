@@ -7,8 +7,6 @@ jobs:
       - image: 'cimg/node:16.10.0'
     steps:
     - checkout
-    - npm install
-    - npm install karma karma-coverage --save-dev
     - sonarcloud/scan
 workflows:
   my-workflow:

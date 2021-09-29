@@ -8,7 +8,9 @@ jobs:
       - checkout
       - run:
           name: Install dependencies and build project
-          command: node --version
+          command: 
+            - npm install
+            - npm install karma karma-coverage --save-dev
       - sonarcloud/scan
 
 orbs:

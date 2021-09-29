@@ -7,6 +7,8 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "earagon1"
+    token:
+      secure: "258964df3f4989029eb182d35401e0cc64e97fc0" # encrypted value of your token
      
 branches:
   only:

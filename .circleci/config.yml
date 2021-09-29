@@ -1,23 +1,17 @@
 version: 2.1
-
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.0
 jobs:
   build:
     docker:
       - image: 'cimg/node:16.10.0'
     steps:
-      - checkout
-      - run:
-          name: Install dependencies and build project
-          command: 
-            - npm install
-            - npm install karma karma-coverage --save-dev
-      - sonarcloud/scan
-
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-
+    - checkout
+    - npm install
+    - npm install karma karma-coverage --save-dev
+    - sonarcloud/scan
 workflows:
-  main:
+  my-workflow:
     jobs:
       - build:
-          context: SonarCloud
+          context: sonarcloud

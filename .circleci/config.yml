@@ -1,17 +1,17 @@
-version: 2.1
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.0
+version: 2
 jobs:
   build:
+    working_directory: ~/Escuela2
     docker:
-      - image: 'cimg/node:16.10.0'
+      - image: circleci/node:10-browsers
     steps:
-    - checkout
-    - npm install
-    - npm install karma karma-coverage --save-dev
-    - sonarcloud/scan
-workflows:
-  my-workflow:
-    jobs:
-      - build:
-          context: sonarcloud
+      - checkout
+      - restore_cache:
+          key: Escuela2-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: Escuela2-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js

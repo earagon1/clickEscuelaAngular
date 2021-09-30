@@ -15,7 +15,6 @@ jobs:
             - "node_modules"
       - run: npm install karma karma-coverage --save-dev
       - sonarcloud/scan
-      
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
   

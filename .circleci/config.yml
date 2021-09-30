@@ -14,6 +14,15 @@ jobs:
           paths:
             - "node_modules"
       - run: npm install karma karma-coverage --save-dev
-      - sonarcloud/scan
+      - sonarcloud/scan:
+          cache_version: 1 
+          sonar_token_variable_name: SONAR_TOKEN 
+      
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.2
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+  
+workflows:
+  main:
+    jobs:
+      - build:
+          context: sonarcloud

@@ -21,5 +21,4 @@ workflows:
   main:
     jobs:
       - build:
-          context: sonarcloudbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
+          context: sonarcloud

@@ -1,5 +1,14 @@
 version: 2.1
 
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
+
 jobs:
   build:
     docker:
@@ -16,11 +25,3 @@ jobs:
       - run: npm install karma karma-coverage --save-dev
       - sonarcloud/scan
 
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-
-workflows:
-  main:
-    jobs:
-      - build:
-          context: SonarCloud

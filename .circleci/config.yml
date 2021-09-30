@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 jobs:
   build:
     working_directory: ~/Escuela2
@@ -16,5 +18,4 @@ jobs:
             - "node_modules"
       - run: npm install karma karma-coverage --save-dev
       - run: sonarcloud/scan
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
+

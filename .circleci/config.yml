@@ -17,5 +17,15 @@ jobs:
           paths:
             - "node_modules"
       - run: npm install karma karma-coverage --save-dev
-      - run: sonar-scanner
-
+      - run: sonarcloud/scan_with_npm
+orbs:
+  sonarcloud: extendaretail/sonarcloud@1.0.0
+workflows:
+  main:
+    jobs:
+      - commit:
+          context: sonarcloud
+      - sonarcloud/check_quality_gate:
+          context: sonarcloud
+          requires:
+            - push

@@ -13,9 +13,7 @@ jobs:
           key: Escuela2-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run:
-          name: Install dependencies and build project
-          command: npm install karma karma-coverage --save-dev
+      - run: npm install karma karma-coverage --save-dev
       - sonarcloud/scan
 
 orbs:

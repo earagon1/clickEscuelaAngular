@@ -1,18 +1,21 @@
-version: 2.1
-
+version: 2
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
-
-workflows:
+  workflows:
   main:
     jobs:
-      - build:
-          context: SonarCloud
-
+      - commit:
+          context: sonarcloud
+      - sonarcloud/check_quality_gate:
+          context: sonarcloud
+          requires:
+            - push
 jobs:
   build:
+    working_directory: ~/Escuela2
     docker:
-      - image: 'circleci/node:10-browsers'
+      - image: circleci/node:10-browsers
+    context: SonarCloud
     steps:
       - checkout
       - restore_cache:

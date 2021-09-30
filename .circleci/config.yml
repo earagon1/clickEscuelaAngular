@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/Escuela2
     docker:
       - image: circleci/node:10-browsers
+    context: sonarcloud
     steps:
       - checkout
       - restore_cache:
@@ -16,10 +17,4 @@ jobs:
       - run: npm install karma karma-coverage --save-dev
       - run: sonarcloud/scan
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.0
-version: 2.1
-workflows:
-  main:
-    jobs:
-      - build:
-          context: sonarcloud
+  sonarcloud: sonarsource/sonarcloud@1.0.1
